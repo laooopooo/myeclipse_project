@@ -1,5 +1,0 @@
-package ∞¢¿Ô√Ê ‘;
-
-public class Person {
-	public int a;
-}
