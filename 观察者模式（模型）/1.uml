@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_3DYOgPEbEea1b7NJnpI30A">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_3E21MPEbEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3DY1kPEbEea1b7NJnpI30A" name="ConcreteSubject" clientDependency="_3EUCoPEbEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_3Ex8sPEbEea1b7NJnpI30A" name="observers" visibility="private" type="_3ExVoPEbEea1b7NJnpI30A"/>
+    <interfaceRealization xmi:id="_3EUCoPEbEea1b7NJnpI30A" name="Subject" supplier="_3DaqwPEbEea1b7NJnpI30A" client="_3DY1kPEbEea1b7NJnpI30A" contract="_3DaqwPEbEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_3EzK0PEbEea1b7NJnpI30A" name="attach" visibility="public">
+      <ownedParameter xmi:id="_3EzK0fEbEea1b7NJnpI30A" name="observer" type="_3DbR0PEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3E0Y8PEbEea1b7NJnpI30A" name="detach" visibility="public">
+      <ownedParameter xmi:id="_3E0Y8fEbEea1b7NJnpI30A" name="observer" type="_3DbR0PEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3E1nEPEbEea1b7NJnpI30A" name="notifyObservers" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3DZcoPEbEea1b7NJnpI30A" name="Client">
+    <ownedOperation xmi:id="_3E21MfEbEea1b7NJnpI30A" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_3E21MvEbEea1b7NJnpI30A" name="args">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3E21M_EbEea1b7NJnpI30A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3E21NPEbEea1b7NJnpI30A"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3DaDsPEbEea1b7NJnpI30A" name="ConcreteObserver" clientDependency="_3E4DUPEbEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_3E4qYPEbEea1b7NJnpI30A" name="name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <interfaceRealization xmi:id="_3E4DUPEbEea1b7NJnpI30A" name="Observer" supplier="_3DbR0PEbEea1b7NJnpI30A" client="_3DaDsPEbEea1b7NJnpI30A" contract="_3DbR0PEbEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_3E5RcPEbEea1b7NJnpI30A" name="update" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_3DaqwPEbEea1b7NJnpI30A" name="Subject">
+    <ownedOperation xmi:id="_3E54gPEbEea1b7NJnpI30A" name="attach" visibility="public">
+      <ownedParameter xmi:id="_3E54gfEbEea1b7NJnpI30A" name="observer" type="_3DbR0PEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3E54gvEbEea1b7NJnpI30A" name="detach" visibility="public">
+      <ownedParameter xmi:id="_3E54g_EbEea1b7NJnpI30A" name="observer" type="_3DbR0PEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_3E54hPEbEea1b7NJnpI30A" name="notifyObservers" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_3DbR0PEbEea1b7NJnpI30A" name="Observer">
+    <ownedOperation xmi:id="_3E54hfEbEea1b7NJnpI30A" name="update" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_3ES0gPEbEea1b7NJnpI30A" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_3ES0gfEbEea1b7NJnpI30A" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_3ETbkPEbEea1b7NJnpI30A" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_3ETbkfEbEea1b7NJnpI30A" name="List"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_3ExVoPEbEea1b7NJnpI30A" name="List&lt;Observer>"/>
+</uml:Model>

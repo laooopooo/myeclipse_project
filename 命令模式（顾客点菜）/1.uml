@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_2bseEPEIEea1b7NJnpI30A">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_2d1MEPEIEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_2btFIPEIEea1b7NJnpI30A" name="IOrder">
+    <ownedOperation xmi:id="_2dTnoPEIEea1b7NJnpI30A" name="execute" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2btsMPEIEea1b7NJnpI30A" name="MM">
+    <ownedAttribute xmi:id="_2dUOsPEIEea1b7NJnpI30A" name="order" visibility="package" type="_2btFIPEIEea1b7NJnpI30A" association="_2e0qkPEIEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_2dU1wPEIEea1b7NJnpI30A" name="setOrder" visibility="public">
+      <ownedParameter xmi:id="_2dU1wfEIEea1b7NJnpI30A" name="order" type="_2btFIPEIEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_2dVc0PEIEea1b7NJnpI30A" name="onOrder" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2buTQPEIEea1b7NJnpI30A" name="LiangCaiOrder" clientDependency="_2dVc0fEIEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_2dWD4PEIEea1b7NJnpI30A" name="chuShi" visibility="private" type="_2bwIcfEIEea1b7NJnpI30A" association="_2e0qkvEIEea1b7NJnpI30A"/>
+    <interfaceRealization xmi:id="_2dVc0fEIEea1b7NJnpI30A" name="IOrder" supplier="_2btFIPEIEea1b7NJnpI30A" client="_2buTQPEIEea1b7NJnpI30A" contract="_2btFIPEIEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_2dWq8PEIEea1b7NJnpI30A" name="execute" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2bu6UPEIEea1b7NJnpI30A" name="Client">
+    <ownedOperation xmi:id="_2d1MEfEIEea1b7NJnpI30A" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_2d1MEvEIEea1b7NJnpI30A" name="args">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_2d1ME_EIEea1b7NJnpI30A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_2d1MFPEIEea1b7NJnpI30A"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2bvhYPEIEea1b7NJnpI30A" name="ReCaiOrder" clientDependency="_2d1zIPEIEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_2d2aMPEIEea1b7NJnpI30A" name="chuShi" visibility="package" type="_2bwIcPEIEea1b7NJnpI30A" association="_2e0qlPEIEea1b7NJnpI30A"/>
+    <interfaceRealization xmi:id="_2d1zIPEIEea1b7NJnpI30A" name="IOrder" supplier="_2btFIPEIEea1b7NJnpI30A" client="_2bvhYPEIEea1b7NJnpI30A" contract="_2btFIPEIEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_2d3BQPEIEea1b7NJnpI30A" name="execute" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2bwIcPEIEea1b7NJnpI30A" name="ReCaiChuShi">
+    <ownedOperation xmi:id="_2d3oUPEIEea1b7NJnpI30A" name="cook" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2bwIcfEIEea1b7NJnpI30A" name="LiangCaiChuShi">
+    <ownedOperation xmi:id="_2d3oUfEIEea1b7NJnpI30A" name="makeCook" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2e0qkPEIEea1b7NJnpI30A" memberEnd="_2dUOsPEIEea1b7NJnpI30A _2e0qkfEIEea1b7NJnpI30A">
+    <ownedEnd xmi:id="_2e0qkfEIEea1b7NJnpI30A" name="MM" type="_2btsMPEIEea1b7NJnpI30A" association="_2e0qkPEIEea1b7NJnpI30A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2e0qkvEIEea1b7NJnpI30A" memberEnd="_2dWD4PEIEea1b7NJnpI30A _2e0qk_EIEea1b7NJnpI30A">
+    <ownedEnd xmi:id="_2e0qk_EIEea1b7NJnpI30A" name="LiangCaiOrder" type="_2buTQPEIEea1b7NJnpI30A" association="_2e0qkvEIEea1b7NJnpI30A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_2e0qlPEIEea1b7NJnpI30A" memberEnd="_2d2aMPEIEea1b7NJnpI30A _2e0qlfEIEea1b7NJnpI30A">
+    <ownedEnd xmi:id="_2e0qlfEIEea1b7NJnpI30A" name="ReCaiOrder" type="_2bvhYPEIEea1b7NJnpI30A" association="_2e0qlPEIEea1b7NJnpI30A"/>
+  </packagedElement>
+</uml:Model>

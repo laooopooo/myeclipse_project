@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_q5gfMPEGEea1b7NJnpI30A">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_rGS-APEGEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+  </elementImport>
+  <elementImport xmi:id="_rGnHEPEGEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rAxk0PEGEea1b7NJnpI30A" name="MoneyOutCommand">
+    <generalization xmi:id="_rDL_oPEGEea1b7NJnpI30A" general="_rBAOUPEGEea1b7NJnpI30A"/>
+    <ownedAttribute xmi:id="_rGUMIPEGEea1b7NJnpI30A" name="amount" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_rGfLQPEGEea1b7NJnpI30A" name="execute" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rA9LAPEGEea1b7NJnpI30A" name="Client">
+    <ownedOperation xmi:id="_rGpjUPEGEea1b7NJnpI30A" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_rGpjUfEGEea1b7NJnpI30A" name="args">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_rGpjUvEGEea1b7NJnpI30A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_rGpjU_EGEea1b7NJnpI30A"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rA-ZIPEGEea1b7NJnpI30A" name="Invoker">
+    <ownedAttribute xmi:id="_rGrYgPEGEea1b7NJnpI30A" name="command" visibility="private" type="_rBAOUPEGEea1b7NJnpI30A" association="_rIPewPEGEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_rGr_kPEGEea1b7NJnpI30A" name="setCommand" visibility="public">
+      <ownedParameter xmi:id="_rGr_kfEGEea1b7NJnpI30A" name="command" type="_rBAOUPEGEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_rGsmoPEGEea1b7NJnpI30A" name="executeCommand" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rA_AMPEGEea1b7NJnpI30A" name="Account">
+    <ownedAttribute xmi:id="_rGt0wPEGEea1b7NJnpI30A" name="totalAmount" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_rGub0PEGEea1b7NJnpI30A" name="moneyIn" visibility="public">
+      <ownedParameter xmi:id="_rGub0fEGEea1b7NJnpI30A" name="amount">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_rGvp8PEGEea1b7NJnpI30A" name="moneyOut" visibility="public">
+      <ownedParameter xmi:id="_rGvp8fEGEea1b7NJnpI30A" name="amount">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:id="_rGwRAPEGEea1b7NJnpI30A" name="getTotalAmount" visibility="public">
+      <ownedParameter xmi:id="_rGw4EPEGEea1b7NJnpI30A" name="return" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rA_AMfEGEea1b7NJnpI30A" name="MoneyInCommand">
+    <generalization xmi:id="_rGxfIPEGEea1b7NJnpI30A" general="_rBAOUPEGEea1b7NJnpI30A"/>
+    <ownedAttribute xmi:id="_rGyGMPEGEea1b7NJnpI30A" name="amount" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_rGytQPEGEea1b7NJnpI30A" name="execute" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_rBAOUPEGEea1b7NJnpI30A" name="Command" isAbstract="true">
+    <ownedAttribute xmi:id="_rGz7YPEGEea1b7NJnpI30A" name="account" visibility="protected" type="_rA_AMPEGEea1b7NJnpI30A" association="_rIQF0fEGEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_rG0icPEGEea1b7NJnpI30A" name="execute" visibility="public" isAbstract="true"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rIPewPEGEea1b7NJnpI30A" memberEnd="_rGrYgPEGEea1b7NJnpI30A _rIQF0PEGEea1b7NJnpI30A">
+    <ownedEnd xmi:id="_rIQF0PEGEea1b7NJnpI30A" name="Invoker" type="_rA-ZIPEGEea1b7NJnpI30A" association="_rIPewPEGEea1b7NJnpI30A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_rIQF0fEGEea1b7NJnpI30A" memberEnd="_rGz7YPEGEea1b7NJnpI30A _rIQF0vEGEea1b7NJnpI30A">
+    <ownedEnd xmi:id="_rIQF0vEGEea1b7NJnpI30A" name="Command" type="_rBAOUPEGEea1b7NJnpI30A" association="_rIQF0fEGEea1b7NJnpI30A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_zvav8PEGEea1b7NJnpI30A" name="Class1"/>
+</uml:Model>

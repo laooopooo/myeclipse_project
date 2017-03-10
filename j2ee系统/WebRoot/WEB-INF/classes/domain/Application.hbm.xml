@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="domain">
+	<class name="Application" table="application_inf">
+		<cache usage="read-write" />
+		<id name="id" column="application_id" type="integer">
+			<generator class="identity"></generator>
+		</id>
+		<property name="reason" column="application_reason" type="string"
+			length="200"></property>
+		<property name="result" column="result" type="boolean"></property>
+		<many-to-one name="attend" class="Attend" column="attend_id"
+			not-null="true"></many-to-one>
+		<many-to-one name="type" class="AttendType" column="attendType_id"
+			not-null="true"></many-to-one>
+		<one-to-one name="check" property-ref="app"></one-to-one>
+
+	</class>
+</hibernate-mapping>

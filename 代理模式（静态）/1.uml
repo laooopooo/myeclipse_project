@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_oV1AEPjeEeaEZq5f-Bl_Qw">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_oZZRffjeEeaEZq5f-Bl_Qw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oWa18PjeEeaEZq5f-Bl_Qw" name="impl">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_oWa18fjeEeaEZq5f-Bl_Qw" name="Account">
+      <ownedOperation xmi:id="_oYWvoPjeEeaEZq5f-Bl_Qw" name="queryAccount" visibility="public"/>
+      <ownedOperation xmi:id="_oYWvofjeEeaEZq5f-Bl_Qw" name="updateAccount" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oWa18vjeEeaEZq5f-Bl_Qw" name="proxy">
+    <packagedElement xmi:type="uml:Class" xmi:id="_oWa18_jeEeaEZq5f-Bl_Qw" name="Proxy" clientDependency="_oYWvovjeEeaEZq5f-Bl_Qw">
+      <ownedAttribute xmi:id="_oYWvo_jeEeaEZq5f-Bl_Qw" name="account" visibility="private" type="_oWa18fjeEeaEZq5f-Bl_Qw" association="_oa4fMPjeEeaEZq5f-Bl_Qw"/>
+      <interfaceRealization xmi:id="_oYWvovjeEeaEZq5f-Bl_Qw" name="Account" supplier="_oWa18fjeEeaEZq5f-Bl_Qw" client="_oWa18_jeEeaEZq5f-Bl_Qw" contract="_oWa18fjeEeaEZq5f-Bl_Qw"/>
+      <ownedOperation xmi:id="_oYWvpPjeEeaEZq5f-Bl_Qw" name="queryAccount" visibility="public"/>
+      <ownedOperation xmi:id="_oYggoPjeEeaEZq5f-Bl_Qw" name="updateAccount" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_oa4fMPjeEeaEZq5f-Bl_Qw" memberEnd="_oYWvo_jeEeaEZq5f-Bl_Qw _oa4fMfjeEeaEZq5f-Bl_Qw">
+      <ownedEnd xmi:id="_oa4fMfjeEeaEZq5f-Bl_Qw" name="Proxy" type="_oWa18_jeEeaEZq5f-Bl_Qw" association="_oa4fMPjeEeaEZq5f-Bl_Qw"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oWa19PjeEeaEZq5f-Bl_Qw" name="realObject">
+    <packagedElement xmi:type="uml:Class" xmi:id="_oWa19fjeEeaEZq5f-Bl_Qw" name="AccountImpl" clientDependency="_oYggofjeEeaEZq5f-Bl_Qw">
+      <interfaceRealization xmi:id="_oYggofjeEeaEZq5f-Bl_Qw" name="Account" supplier="_oWa18fjeEeaEZq5f-Bl_Qw" client="_oWa19fjeEeaEZq5f-Bl_Qw" contract="_oWa18fjeEeaEZq5f-Bl_Qw"/>
+      <ownedOperation xmi:id="_oYggovjeEeaEZq5f-Bl_Qw" name="queryAccount" visibility="public"/>
+      <ownedOperation xmi:id="_oYggo_jeEeaEZq5f-Bl_Qw" name="updateAccount" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_oWa19vjeEeaEZq5f-Bl_Qw" name="test">
+    <packagedElement xmi:type="uml:Class" xmi:id="_oWa19_jeEeaEZq5f-Bl_Qw" name="Test">
+      <ownedComment xmi:id="_oWa1-PjeEeaEZq5f-Bl_Qw">
+        <body>/** 
+ * 好了，至此我们的静态代理实现了， 但是问题也跟着来了，观察代码可以发现每一个代理类只能为一个接口服务， 一个AccountProxy 类实现了一个Account接口， 那么我要是有多个接口，是不是要写多个Proxy类与之对应。 这样一来程序开发中必然会产生过多的代理， 而且，所有的代理操作除了调用的方法不一样之外，其他的操作都一样，则此时肯定是重复代码。 解决这一问题最好的做法是可以通过一个代理类完成全部的代理功能，那就引入了我们的动态代理了。
+ * @author Administrator
+ */
+</body>
+      </ownedComment>
+      <ownedOperation xmi:id="_oZZRfvjeEeaEZq5f-Bl_Qw" name="main" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_oZZRf_jeEeaEZq5f-Bl_Qw" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oZZRgPjeEeaEZq5f-Bl_Qw" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oZZRgfjeEeaEZq5f-Bl_Qw"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

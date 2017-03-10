@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_b8tuUPjeEeaEZq5f-Bl_Qw">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_cLvo0PjeEeaEZq5f-Bl_Qw">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cFMU4PjeEeaEZq5f-Bl_Qw" name="Client">
+    <ownedOperation xmi:id="_cLvo0fjeEeaEZq5f-Bl_Qw" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_cLvo0vjeEeaEZq5f-Bl_Qw" name="args">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cLvo0_jeEeaEZq5f-Bl_Qw" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cLvo1PjeEeaEZq5f-Bl_Qw"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cFpA0PjeEeaEZq5f-Bl_Qw" name="ConcreteComponent" clientDependency="_cL4ywPjeEeaEZq5f-Bl_Qw">
+    <interfaceRealization xmi:id="_cL4ywPjeEeaEZq5f-Bl_Qw" name="Component" supplier="_cFyx0vjeEeaEZq5f-Bl_Qw" client="_cFpA0PjeEeaEZq5f-Bl_Qw" contract="_cFyx0vjeEeaEZq5f-Bl_Qw"/>
+    <ownedOperation xmi:id="_cMCjwPjeEeaEZq5f-Bl_Qw" name="operation" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_cFyx0PjeEeaEZq5f-Bl_Qw" name="Decorator">
+    <generalization xmi:id="_cMCjwfjeEeaEZq5f-Bl_Qw" general="_cFyx0vjeEeaEZq5f-Bl_Qw"/>
+    <ownedOperation xmi:id="_cMCjwvjeEeaEZq5f-Bl_Qw" name="addedBehavior" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_cFyx0fjeEeaEZq5f-Bl_Qw" name="ConcreteDecorator" clientDependency="_cMCjw_jeEeaEZq5f-Bl_Qw">
+    <ownedAttribute xmi:id="_cMCjxPjeEeaEZq5f-Bl_Qw" name="decoratedComponent" visibility="private" type="_cFyx0vjeEeaEZq5f-Bl_Qw" association="_cN0scPjeEeaEZq5f-Bl_Qw"/>
+    <interfaceRealization xmi:id="_cMCjw_jeEeaEZq5f-Bl_Qw" name="Decorator" supplier="_cFyx0PjeEeaEZq5f-Bl_Qw" client="_cFyx0fjeEeaEZq5f-Bl_Qw" contract="_cFyx0PjeEeaEZq5f-Bl_Qw"/>
+    <ownedOperation xmi:id="_cMCjxfjeEeaEZq5f-Bl_Qw" name="operation" visibility="public"/>
+    <ownedOperation xmi:id="_cMCjxvjeEeaEZq5f-Bl_Qw" name="addedBehavior" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_cFyx0vjeEeaEZq5f-Bl_Qw" name="Component">
+    <ownedOperation xmi:id="_cMCjx_jeEeaEZq5f-Bl_Qw" name="operation" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_cN0scPjeEeaEZq5f-Bl_Qw" memberEnd="_cMCjxPjeEeaEZq5f-Bl_Qw _cN0scfjeEeaEZq5f-Bl_Qw">
+    <ownedEnd xmi:id="_cN0scfjeEeaEZq5f-Bl_Qw" name="ConcreteDecorator" type="_cFyx0fjeEeaEZq5f-Bl_Qw" association="_cN0scPjeEeaEZq5f-Bl_Qw"/>
+  </packagedElement>
+</uml:Model>
