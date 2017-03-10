@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_Fztb0PEHEea1b7NJnpI30A">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_F1x4YPEHEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_FzuC4PEHEea1b7NJnpI30A" name="命令模式">
+    <packagedElement xmi:type="uml:Class" xmi:id="_FzuC4fEHEea1b7NJnpI30A" name="ConcreteCommand" clientDependency="_F1FU0PEHEea1b7NJnpI30A">
+      <ownedAttribute xmi:id="_F1Gi8PEHEea1b7NJnpI30A" name="receiver" visibility="private" type="_FzvRAPEHEea1b7NJnpI30A" association="_F3OC0PEHEea1b7NJnpI30A"/>
+      <interfaceRealization xmi:id="_F1FU0PEHEea1b7NJnpI30A" name="ICommand" supplier="_FzwfIPEHEea1b7NJnpI30A" client="_FzuC4fEHEea1b7NJnpI30A" contract="_FzwfIPEHEea1b7NJnpI30A"/>
+      <ownedOperation xmi:id="_F1HKAPEHEea1b7NJnpI30A" name="execute" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Fzup8PEHEea1b7NJnpI30A" name="Client">
+      <ownedOperation xmi:id="_F1yfcPEHEea1b7NJnpI30A" name="main" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_F1yfcfEHEea1b7NJnpI30A" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_F1yfcvEHEea1b7NJnpI30A" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_F1yfc_EHEea1b7NJnpI30A"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_FzvRAPEHEea1b7NJnpI30A" name="Receiver">
+      <ownedOperation xmi:id="_F1zGgPEHEea1b7NJnpI30A" name="action" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_Fzv4EPEHEea1b7NJnpI30A" name="Invoker">
+      <ownedAttribute xmi:id="_F107sPEHEea1b7NJnpI30A" name="command" visibility="private" type="_FzwfIPEHEea1b7NJnpI30A" association="_F3OC0vEHEea1b7NJnpI30A"/>
+      <ownedOperation xmi:id="_F11iwPEHEea1b7NJnpI30A" name="setCommand" visibility="public">
+        <ownedParameter xmi:id="_F11iwfEHEea1b7NJnpI30A" name="command" type="_FzwfIPEHEea1b7NJnpI30A"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_F12J0PEHEea1b7NJnpI30A" name="runCommand" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_FzwfIPEHEea1b7NJnpI30A" name="ICommand">
+      <ownedOperation xmi:id="_F12J0fEHEea1b7NJnpI30A" name="execute" visibility="public"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_F3OC0PEHEea1b7NJnpI30A" memberEnd="_F1Gi8PEHEea1b7NJnpI30A _F3OC0fEHEea1b7NJnpI30A">
+      <ownedEnd xmi:id="_F3OC0fEHEea1b7NJnpI30A" name="ConcreteCommand" type="_FzuC4fEHEea1b7NJnpI30A" association="_F3OC0PEHEea1b7NJnpI30A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_F3OC0vEHEea1b7NJnpI30A" memberEnd="_F107sPEHEea1b7NJnpI30A _F3OC0_EHEea1b7NJnpI30A">
+      <ownedEnd xmi:id="_F3OC0_EHEea1b7NJnpI30A" name="Invoker" type="_Fzv4EPEHEea1b7NJnpI30A" association="_F3OC0vEHEea1b7NJnpI30A"/>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

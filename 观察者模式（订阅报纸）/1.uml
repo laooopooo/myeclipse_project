@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_8_K3gPEbEea1b7NJnpI30A">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_9BH_UPEbEea1b7NJnpI30A">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_8_5QQPEbEea1b7NJnpI30A" name="ISubscribe">
+    <ownedOperation xmi:id="_9AlMwPEbEea1b7NJnpI30A" name="hasNewPaper" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8_53UPEbEea1b7NJnpI30A" name="SubHuman" clientDependency="_9AlMwfEbEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_9BImYPEbEea1b7NJnpI30A" name="name" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <interfaceRealization xmi:id="_9AlMwfEbEea1b7NJnpI30A" name="ISubscribe" supplier="_8_5QQPEbEea1b7NJnpI30A" client="_8_53UPEbEea1b7NJnpI30A" contract="_8_5QQPEbEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_9BJNcPEbEea1b7NJnpI30A" name="hasNewPaper" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_8_7FcPEbEea1b7NJnpI30A" name="INewsPaper">
+    <ownedOperation xmi:id="_9BJ0gPEbEea1b7NJnpI30A" name="registerSubscriber" visibility="public">
+      <ownedParameter xmi:id="_9BJ0gfEbEea1b7NJnpI30A" name="subscribe" type="_8_5QQPEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9BJ0gvEbEea1b7NJnpI30A" name="removeSubscriber" visibility="public">
+      <ownedParameter xmi:id="_9BJ0g_EbEea1b7NJnpI30A" name="subscribe" type="_8_5QQPEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9BJ0hPEbEea1b7NJnpI30A" name="sendPaper" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8_7sgPEbEea1b7NJnpI30A" name="PeoPleNewsPaper" clientDependency="_9BJ0hfEbEea1b7NJnpI30A">
+    <ownedAttribute xmi:id="_9BKbkPEbEea1b7NJnpI30A" name="subList" visibility="private" type="_9BJ0hvEbEea1b7NJnpI30A"/>
+    <interfaceRealization xmi:id="_9BJ0hfEbEea1b7NJnpI30A" name="INewsPaper" supplier="_8_7FcPEbEea1b7NJnpI30A" client="_8_7sgPEbEea1b7NJnpI30A" contract="_8_7FcPEbEea1b7NJnpI30A"/>
+    <ownedOperation xmi:id="_9BLCoPEbEea1b7NJnpI30A" name="registerSubscriber" visibility="public">
+      <ownedParameter xmi:id="_9BLpsPEbEea1b7NJnpI30A" name="subscribe" type="_8_5QQPEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9BMQwPEbEea1b7NJnpI30A" name="removeSubscriber" visibility="public">
+      <ownedParameter xmi:id="_9BMQwfEbEea1b7NJnpI30A" name="subscribe" type="_8_5QQPEbEea1b7NJnpI30A"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_9BM30PEbEea1b7NJnpI30A" name="sendPaper" visibility="public"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_8_8TkPEbEea1b7NJnpI30A" name="Client">
+    <ownedOperation xmi:id="_9BNe4PEbEea1b7NJnpI30A" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_9BNe4fEbEea1b7NJnpI30A" name="args">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9BNe4vEbEea1b7NJnpI30A" value="*"/>
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9BNe4_EbEea1b7NJnpI30A"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_9AklsPEbEea1b7NJnpI30A" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_9AklsfEbEea1b7NJnpI30A" name="util">
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9AklsvEbEea1b7NJnpI30A" name="ArrayList"/>
+      <packagedElement xmi:type="uml:DataType" xmi:id="_9Akls_EbEea1b7NJnpI30A" name="List"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_9BJ0hvEbEea1b7NJnpI30A" name="List&lt;ISubscribe>"/>
+</uml:Model>
