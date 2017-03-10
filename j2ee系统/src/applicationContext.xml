@@ -81,7 +81,77 @@
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="leePointcut" />
 	</aop:config>
 
+	<!-- 业务逻辑组件模板 -->
+	<bean id="managerTemplate" abstract="true" lazy-init="true">
+		<property name="appDao">
+			<ref bean="appDao" />
+		</property>
+		<property name="attendDao">
+			<ref bean="attendDao" />
+		</property>
+		<property name="typeDao">
+			<ref bean="attendTypeDao" />
+		</property>
+		<property name="checkDao">
+			<ref bean="checkDao" />
+		</property>
+		<property name="empDao">
+			<ref bean="empDao" />
+		</property>
+		<property name="mgrDao">
+			<ref bean="managerDao" />
+		</property>
+		<property name="payDao">
+			<ref bean="payDao" />
+		</property>
+	</bean>
+
+	<bean id="empManager" class="service.impl.EmpManagerImpl" parent="managerTemplate"></bean>
+	<bean id="mgrManager" class="service.impl.MgrManagerImpl" parent="managerTemplate"></bean>
+
+	<!-- 定义两个触发器，控制每天两次自动打卡和每月一次自动发工资 -->
+	<bean id="cronTriggerPay" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<property name="jobClass">
+					<value>org.schedule.PayJob</value>
+				</property>
+				<property name="jobDataAsMap">
+					<map>
+						<entry key="empMgr" value-ref="empManager"></entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+		<property name="cronExpression" value="0 0 2 3 * ? *"></property>
+	</bean>
+
+	<bean id="cronTriggerPunch" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail">
+			<bean class="org.springframework.scheduling.quartz.JobDetailBean">
+				<property name="jobClass" value="org.schedule.PunchJob"></property>
+				<property name="jobDataAsMap">
+					<map>
+						<entry key="empMgr">
+							<ref bean="empManager" />
+						</entry>
+					</map>
+				</property>
+			</bean>
+		</property>
+		<property name="cronExpression">
+			<value>0 0 7,12 ? * MON-FRI</value>
+		</property>
+	</bean>
+
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTriggerPay" />
+				<ref bean="cronTriggerPunch" />
+			</list>
+		</property>
+	</bean>
 
 
-	<tx:annotation-driven transaction-manager="transactionManager" />
 </beans>

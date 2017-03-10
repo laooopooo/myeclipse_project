@@ -56,7 +56,7 @@ public class EmpManagerImpl implements EmpManager {
 	}
 
 	/**
-	 * 在7点钟，自动插入旷工记录
+	 * 在7点钟，与12点钟自动插入旷工记录
 	 */
 	@Override
 	public void autoPunch() {

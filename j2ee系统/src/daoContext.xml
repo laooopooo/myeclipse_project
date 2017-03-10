@@ -9,14 +9,14 @@
 		</property>
 	</bean>
 
-	<bean id="employeeDao" class="dao.impl.EmployeeDaoHibernate"
+	<bean id="empDao" class="dao.impl.EmployeeDaoHibernate"
 		parent="daoTemplate"></bean>
 	<bean id="managerDao" class="dao.impl.ManagerDaoHibernate" parent="daoTemplate"></bean>
-	<bean id="checkBackDao" class="dao.impl.CheckBackDaoHibernate"
+	<bean id="checkDao" class="dao.impl.CheckBackDaoHibernate"
 		parent="daoTemplate"></bean>
-	<bean id="applicationDao" class="dao.impl.ApplicationDaoHibernate"
+	<bean id="appDao" class="dao.impl.ApplicationDaoHibernate"
 		parent="daoTemplate"></bean>
-	<bean id="parmentDao" class="dao.impl.PaymentDaoHibernate" parent="daoTemplate"></bean>
+	<bean id="payDao" class="dao.impl.PaymentDaoHibernate" parent="daoTemplate"></bean>
 	<bean id="attendDao" class="dao.impl.AttendDaoHibernate" parent="daoTemplate"></bean>
 	<bean id="attendTypeDao" class="dao.impl.AttendTypeDaoHibernate"
 		parent="daoTemplate"></bean>
