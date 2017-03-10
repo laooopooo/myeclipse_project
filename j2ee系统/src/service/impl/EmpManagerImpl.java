@@ -260,7 +260,6 @@ public class EmpManagerImpl implements EmpManager {
 		}
 		appDao.save(app);
 		return true;
-
 	}
 
 }
