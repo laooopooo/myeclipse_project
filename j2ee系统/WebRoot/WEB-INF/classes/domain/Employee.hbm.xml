@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+<hibernate-mapping package="domain">
+	<class name="Employee" table="employee_inf" discriminator-value="员工">
+
+		<cache usage="read-write" />
+
+		<id name="id" type="integer" column="employee_id">
+			<generator class="identity"></generator>
+		</id>
+		<discriminator column="employee_type" type="string"></discriminator>
+		<property name="name" column="employee_name" type="string"
+			not-null="true" length="50" unique="true"></property>
+		<property name="pass" column="employee_pass" type="string" not-null="true" length="50" ></property>
+		<property name="salary" column="employee_salary" type="double" not-null="true"></property>
+		<many-to-one name="manager" class="Manager" column="manager_id" lazy="false"></many-to-one>
+		<set name="attends" inverse="true">
+			<key column="employee_id"></key>
+			<one-to-many class="Attend" />
+		</set>
+		<set name="payments" inverse="true">
+			<key column="employee_id"></key>
+			<one-to-many class="Payment" />
+		</set>
+
+		<subclass name="Manager" discriminator-value="经理">
+			<property name="dept" column="dept_name" type="string" length="50"></property>
+			<set name="employees" inverse="true">
+				<key column="manager_id"></key>
+				<one-to-many class="Employee" />
+			</set>
+			<set name="checks" inverse="true">
+				<key column="manager_id"></key>
+				<one-to-many class="CheckBack" />
+			</set>
+		</subclass>
+	</class>
+</hibernate-mapping>
