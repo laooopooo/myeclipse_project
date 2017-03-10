@@ -8,6 +8,7 @@ import org.quartz.Trigger;
 import org.quartz.impl.StdSchedulerFactory;
 
 public class MyQuartzServer {
+
 	public static void main(String[] args) {
 		MyQuartzServer server = new MyQuartzServer();
 		try {
