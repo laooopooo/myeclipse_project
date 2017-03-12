@@ -1,8 +1,8 @@
 package action.base;
 
-import org.springframework.web.struts.ActionSupport;
-
 import service.EmpManager;
+
+import com.opensymphony.xwork2.ActionSupport;
 
 public class EmpBaseAction extends ActionSupport {
 	protected EmpManager mgr;
