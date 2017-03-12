@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,9 +22,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-    <form action="login" method="post">
-    用户名：<input type="text" name="user"><br>
-    密码：<input type="password" name="pass" ><br> <input type="submit">
-	</form>
+    <s:form action="login">
+    <s:textfield name="user.name" label="用户名"></s:textfield>
+    <s:textfield name="user.pass" label="密码"></s:textfield>
+    <tr>
+    <td colspan="2"><s:submit value="转换" theme="simple"></s:submit>
+    <s:reset value="重填" theme="simple"></s:reset>
+    </tr>
+    </s:form>
   </body>
 </html>
