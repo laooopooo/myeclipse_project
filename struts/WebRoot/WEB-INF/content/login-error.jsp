@@ -21,8 +21,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   欢迎 ${sessionScope.user }，登录成功!<br>
-  requestScope.tip: ${requestScope.tip }
+  登录失败 <br>
+   ${requestScope.tip }
 
   </body>
 </html>

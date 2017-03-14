@@ -9,6 +9,8 @@
 			<result name="emp">/WEB-INF/content/employee/index.jsp</result>
 			<result name="error">/WEB-INF/content/login.jsp</result>
 		</action>
+		
+		<action name="*" ></action>
 	</package>
 
 </struts>    

@@ -1,21 +1,21 @@
 package action;
 
-import java.util.Map;
-
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import domain.User;
 
 public class LoginAction extends ActionSupport {
-	private Map<String, User> users;
+	// tip和user都在request范围内
+	private User user;
 	private String tip;
 
-	public Map<String, User> getUsers() {
-		return users;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUsers(Map<String, User> users) {
-		this.users = users;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public String getTip() {
@@ -29,13 +29,12 @@ public class LoginAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(users);
-		if (users.get("one").getName().equals("pfjia")
-				&& users.get("one").getPass().equals("123")) {
-			setTip("登录成功");
+		if (user.getName().equals("pfjia") && user.getPass().equals("123")) {
+			ActionContext.getContext().getSession().put("user", user.getName());
+			setTip("转换成功");
 			return SUCCESS;
 		} else {
-			setTip("登录失败");
+			setTip("转换失败");
 			return ERROR;
 		}
 	}
