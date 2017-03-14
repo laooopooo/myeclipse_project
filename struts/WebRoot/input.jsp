@@ -24,12 +24,16 @@
 </head>
 
 <body>
+<h1>类型转换的错误处理</h1>
+<s:fielderror></s:fielderror>
 	<s:form action="login">
-		<s:textfield name="user" label="用户"></s:textfield>
+		<s:textfield name="user.name" key="user"></s:textfield>
+		<s:textfield name="user.pass" key="pass"></s:textfield>
+		<s:textfield name="user.birth" key="birth"></s:textfield>
 		<tr>
 			<td colspan="2"><s:submit value="转换" theme="simple"></s:submit>
 				<s:reset value="重填" theme="simple"></s:reset>
 		</tr>
 	</s:form>
-</body>
+</body> 
 </html>

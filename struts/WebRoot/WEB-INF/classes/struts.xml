@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
-<!-- 不设置namespace时是默认命令空间，本应可以处理所有的action，但是有点问题，必须把命令空间改为根空间 -->
-	
+	<!-- 不设置namespace时是默认命令空间，本应可以处理所有的action，但是有点问题，必须把命令空间改为根空间 -->
+	<constant name="struts.custom.i18n.resources" value="mess"></constant>
+
+	<package name="lee" extends="struts-default" namespace="/">
+		<action name="login" class="action.LoginAction">
+			<result name="input">/input.jsp</result>
+		</action>
+
+		
+		<action name="*">
+		<result>/WEB-INF/content/{1}.jsp</result></action>
+	</package>
 
 </struts>    

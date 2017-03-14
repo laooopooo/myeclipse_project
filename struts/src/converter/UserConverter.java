@@ -1,27 +1,42 @@
 package converter;
 
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
-import ognl.DefaultTypeConverter;
+import org.apache.struts2.util.StrutsTypeConverter;
+
 import domain.User;
 
-public class UserConverter extends DefaultTypeConverter {
+public class UserConverter extends StrutsTypeConverter {
 
 	@Override
-	public Object convertValue(Map context, Object value, Class toType) {
+	public Object convertFromString(Map arg0, String[] values, Class arg2) {
 		// TODO Auto-generated method stub
-		if (toType == User.class) {
-			String[] params = (String[]) value;
+		System.out.println("ÎÒÊÇUserConverterµÄconvertFormString()");
+		Set<User> result = new HashSet<User>();
+		for (int i = 0; i < values.length; i++) {
 			User user = new User();
-			String[] userValue = params[0].split(",");
-			user.setName(userValue[0]);
-			user.setPass(userValue[1]);
-
-			return user;
-		} else if (toType == String.class) {
-			User user = (User) value;
-			return "<" + user.getName() + "," + user.getPass() + ">";
+			String[] userValues = values[i].split(",");
+			user.setName(userValues[0]);
+			user.setPass(userValues[1]);
 		}
-		return null;
+		return result;
+	}
+
+	@Override
+	public String convertToString(Map arg0, Object o) {
+		// TODO Auto-generated method stub
+		if (o.getClass() == Set.class) {
+			Set<User> users = (Set) o;
+			String result = "[";
+			for (Object obj : users) {
+				User user = (User) obj;
+				result += "<" + user.getName() + "," + user.getPass() + ">";
+			}
+			return result + "]";
+		} else {
+			return "";
+		}
 	}
 }

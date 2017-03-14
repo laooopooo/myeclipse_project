@@ -1,6 +1,5 @@
 package action;
 
-import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 import domain.User;
@@ -10,14 +9,6 @@ public class LoginAction extends ActionSupport {
 	private User user;
 	private String tip;
 
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public String getTip() {
 		return tip;
 	}
@@ -26,17 +17,19 @@ public class LoginAction extends ActionSupport {
 		this.tip = tip;
 	}
 
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		if (user.getName().equals("pfjia") && user.getPass().equals("123")) {
-			ActionContext.getContext().getSession().put("user", user.getName());
-			setTip("转换成功");
-			return SUCCESS;
-		} else {
-			setTip("转换失败");
-			return ERROR;
-		}
+		System.out.println("我是loginaction的execute（）");
+		System.out.println(user.getName());
+		return SUCCESS;
 	}
-
 }

@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -21,7 +23,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-   欢迎 ${sessionScope.user }，登录成功!<br>
+  ==================================<br>
+   <c:forEach var="obj" items="${sessionScope.users}">   
+          ${obj} <br>   
+    </c:forEach>  
+  ======================<br>
+   欢迎 ${sessionScope.users['pfjia'].name }，登录成功!<br>
   requestScope.tip: ${requestScope.tip }
 
   </body>
