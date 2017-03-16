@@ -1,0 +1,12 @@
+/action/
+/applicationContext.xml
+/dao/
+/daoContext.xml
+/domain/
+/exception/
+/hibernate.cfg.xml
+/schedule/
+/service/
+/struts.xml
+/support/
+/vo/
