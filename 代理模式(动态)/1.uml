@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="2.1" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmi:id="_0aJxIApDEeehx7IMQ27mYg">
+  <name xsi:nil="true"/>
+  <elementImport xmi:id="_0bZHQApDEeehx7IMQ27mYg">
+    <importedElement xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0aLmUApDEeehx7IMQ27mYg" name="impl">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_0aM0cApDEeehx7IMQ27mYg" name="Account">
+      <ownedComment xmi:id="_0aOpoApDEeehx7IMQ27mYg">
+        <body>/** 
+ * 业务接口
+ * @author Administrator
+ */
+</body>
+      </ownedComment>
+      <ownedOperation xmi:id="_0a0fgQpDEeehx7IMQ27mYg" name="queryAcount" visibility="public"/>
+      <ownedOperation xmi:id="_0a1GkApDEeehx7IMQ27mYg" name="updateAccount" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0aOpoQpDEeehx7IMQ27mYg" name="proxy">
+    <packagedElement xmi:type="uml:Class" xmi:id="_0aZBsApDEeehx7IMQ27mYg" name="Proxy">
+      <ownedAttribute xmi:id="_0bUOwApDEeehx7IMQ27mYg" name="target" visibility="private" type="_0bTnsApDEeehx7IMQ27mYg"/>
+      <ownedOperation xmi:id="_0bVc4ApDEeehx7IMQ27mYg" name="invoke" visibility="public">
+        <ownedParameter xmi:id="_0bVc4QpDEeehx7IMQ27mYg" name="proxy" type="_0bTnsApDEeehx7IMQ27mYg"/>
+        <ownedParameter xmi:id="_0bVc4gpDEeehx7IMQ27mYg" name="method" type="_0a0fgApDEeehx7IMQ27mYg"/>
+        <ownedParameter xmi:id="_0bVc4wpDEeehx7IMQ27mYg" name="args" type="_0bTnsApDEeehx7IMQ27mYg">
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0bVc5ApDEeehx7IMQ27mYg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0bVc5QpDEeehx7IMQ27mYg"/>
+        </ownedParameter>
+        <ownedParameter xmi:id="_0bVc5gpDEeehx7IMQ27mYg" name="return" type="_0bTnsApDEeehx7IMQ27mYg" direction="return"/>
+      </ownedOperation>
+      <ownedOperation xmi:id="_0bWrAApDEeehx7IMQ27mYg" name="getInstance" visibility="public">
+        <ownedParameter xmi:id="_0bWrAQpDEeehx7IMQ27mYg" name="target" type="_0bTnsApDEeehx7IMQ27mYg"/>
+        <ownedParameter xmi:id="_0bWrAgpDEeehx7IMQ27mYg" name="return" type="_0bTnsApDEeehx7IMQ27mYg" direction="return"/>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0aaP0ApDEeehx7IMQ27mYg" name="realsubject">
+    <packagedElement xmi:type="uml:Class" xmi:id="_0aa24ApDEeehx7IMQ27mYg" name="AccountImpl" clientDependency="_0bX5IApDEeehx7IMQ27mYg">
+      <interfaceRealization xmi:id="_0bX5IApDEeehx7IMQ27mYg" name="Account" supplier="_0aM0cApDEeehx7IMQ27mYg" client="_0aa24ApDEeehx7IMQ27mYg" contract="_0aM0cApDEeehx7IMQ27mYg"/>
+      <ownedOperation xmi:id="_0bX5IQpDEeehx7IMQ27mYg" name="queryAcount" visibility="public"/>
+      <ownedOperation xmi:id="_0bYgMApDEeehx7IMQ27mYg" name="updateAccount" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0abd8ApDEeehx7IMQ27mYg" name="test">
+    <packagedElement xmi:type="uml:Class" xmi:id="_0acFAApDEeehx7IMQ27mYg" name="Test">
+      <ownedOperation xmi:id="_0bZuUApDEeehx7IMQ27mYg" name="main" visibility="public" isStatic="true">
+        <ownedParameter xmi:id="_0bZuUQpDEeehx7IMQ27mYg" name="args">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0bZuUgpDEeehx7IMQ27mYg" value="*"/>
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0bZuUwpDEeehx7IMQ27mYg"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0az4cApDEeehx7IMQ27mYg" name="java">
+    <packagedElement xmi:type="uml:Package" xmi:id="_0az4cQpDEeehx7IMQ27mYg" name="lang">
+      <packagedElement xmi:type="uml:Package" xmi:id="_0az4cgpDEeehx7IMQ27mYg" name="reflect">
+        <packagedElement xmi:type="uml:DataType" xmi:id="_0az4cwpDEeehx7IMQ27mYg" name="InvocationHandler"/>
+        <packagedElement xmi:type="uml:DataType" xmi:id="_0a0fgApDEeehx7IMQ27mYg" name="Method"/>
+      </packagedElement>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_0bTnsApDEeehx7IMQ27mYg" name="Object"/>
+</uml:Model>

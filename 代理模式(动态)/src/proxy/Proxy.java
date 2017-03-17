@@ -3,9 +3,6 @@ package proxy;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-import realsubject.AccountImpl;
-import impl.Account;
-
 public class Proxy implements InvocationHandler {
 	private Object target;// 实现类的一个对象
 
@@ -14,9 +11,9 @@ public class Proxy implements InvocationHandler {
 			throws Throwable {
 		// TODO Auto-generated method stub
 		Object result;
-		System.out.println("开始执行一个方法:"+method.getName());
-		result=method.invoke(target, args);//这一行代码就等于执行实现类中的相应方法
-		System.out.println("结束执行一个方法:"+method.getName());
+		System.out.println("开始执行一个方法:" + method.getName());
+		result = method.invoke(target, args);// 这一行代码就等于执行实现类中的相应方法
+		System.out.println("结束执行一个方法:" + method.getName());
 		return result;
 	}
 
