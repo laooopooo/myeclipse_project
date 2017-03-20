@@ -1,38 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<project adv-config="true">
-  <add-on id="hibernate.extra"/>
-  <add-on id="spring.misc"/>
+<project>
   <add-on id="spring.web"/>
-  <container path="com.genuitec.runtime.library/com.genuitec.struts_2.1">
-    <disable name="antlr-2.7.2.jar" type="jar"/>
-    <jar-attrs id="data/2.1/core/xwork-core-2.2.1.jar">
-      <attribute name="javadoc_location" value="http://struts.apache.org/release/2.2.x/struts2-core/apidocs/"/>
-      <attribute name="source-path-root"/>
-      <attribute name="source-path" value="D:\MyEclipse 2015 CI\sourceCode\struts\struts-2.1.8.1-all.zip"/>
-    </jar-attrs>
-  </container>
-  <container path="com.genuitec.runtime.library/com.genuitec.hibernate_3.3">
-    <jar-attrs id="myeclipse-data/3.3/lib/core/hibernate3.jar">
-      <attribute name="javadoc_location" value="http://docs.jboss.org/hibernate/orm/3.3/api/"/>
-      <attribute name="source-path-root"/>
-      <attribute name="source-path" value="D:\MyEclipse 2015 CI\sourceCode\hibernate\hibernate-distribution-3.3.2.GA-dist.zip"/>
-    </jar-attrs>
-  </container>
-  <container path="com.genuitec.runtime.library/com.genuitec.spring_3.0">
-    <jar-attrs id="data/3.0/lib/misc/org.springframework.context.support-3.0.5.RELEASE.jar">
-      <attribute name="javadoc_location" value="http://static.springsource.org/spring/docs/3.0.x/api/"/>
-      <attribute name="source-path-root"/>
-      <attribute name="source-path" value="D:\MyEclipse 2015 CI\sourceCode\spring\spring-framework-3.0.5.RELEASE-with-docs.zip"/>
-    </jar-attrs>
-    <jar-attrs id="data/3.0/lib/persistCore/org.springframework.orm-3.0.5.RELEASE.jar">
-      <attribute name="javadoc_location" value="http://static.springsource.org/spring/docs/3.0.x/api/"/>
-      <attribute name="source-path-root"/>
-      <attribute name="source-path" value="D:\MyEclipse 2015 CI\sourceCode\spring\spring-framework-3.0.5.RELEASE-with-docs.zip"/>
-    </jar-attrs>
-    <jar-attrs id="data/3.0/lib/persistCore/org.springframework.transaction-3.0.5.RELEASE.jar">
-      <attribute name="javadoc_location" value="http://static.springsource.org/spring/docs/3.0.x/api/"/>
-      <attribute name="source-path-root"/>
-      <attribute name="source-path" value="D:\MyEclipse 2015 CI\sourceCode\spring\spring-framework-3.0.5.RELEASE-with-docs.zip"/>
-    </jar-attrs>
-  </container>
 </project>

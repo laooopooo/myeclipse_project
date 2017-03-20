@@ -3,40 +3,68 @@ package domain;
 import java.io.Serializable;
 import java.util.Date;
 
-/**
- * Description: <br/>
- * 网站: <a href="http://www.crazyit.org">疯狂Java联盟</a> <br/>
- * Copyright (C), 2001-2012, Yeeku.H.Lee <br/>
- * This program is protected by copyright laws. <br/>
- * Program Name: <br/>
- * Date:
- * 
- * @author Yeeku.H.Lee kongyeeku@163.com
- * @version 1.0
- */
 public class Attend implements Serializable {
-	private static final long serialVersionUID = 48L;
 
-	// 代表标识属性
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5935792977935812014L;
+
+	// 标识属性
 	private Integer id;
-	// 出勤日期
+	// 打卡日期
 	private String dutyDay;
 	// 打卡时间
 	private Date punchTime;
-	// 代表本次打卡是否为上班打卡
+	// 打卡有上班打卡和下班打卡，判断是否是上班打卡
 	private boolean isCome;
-	// 本次出勤的类型
+	// 出勤类型
 	private AttendType type;
-	// 本次出勤关联的员工
+	// 出勤的员工
 	private Employee employee;
 
-	// 无参数的构造器
 	public Attend() {
+		// TODO Auto-generated constructor stub
 	}
 
-	// 初始化全部属性的构造器
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((dutyDay == null) ? 0 : dutyDay.hashCode());
+		result = prime * result
+				+ ((employee == null) ? 0 : employee.hashCode());
+		result = prime * result + (isCome ? 1231 : 1237);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Attend other = (Attend) obj;
+		if (dutyDay == null) {
+			if (other.dutyDay != null)
+				return false;
+		} else if (!dutyDay.equals(other.dutyDay))
+			return false;
+		if (employee == null) {
+			if (other.employee != null)
+				return false;
+		} else if (!employee.equals(other.employee))
+			return false;
+		if (isCome != other.isCome)
+			return false;
+		return true;
+	}
+
 	public Attend(Integer id, String dutyDay, Date punchTime, boolean isCome,
 			AttendType type, Employee employee) {
+		super();
 		this.id = id;
 		this.dutyDay = dutyDay;
 		this.punchTime = punchTime;
@@ -45,79 +73,51 @@ public class Attend implements Serializable {
 		this.employee = employee;
 	}
 
-	// id属性的setter和getter方法
+	public Integer getId() {
+		return id;
+	}
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Integer getId() {
-		return this.id;
+	public String getDutyDay() {
+		return dutyDay;
 	}
 
-	// dutyDay属性的setter和getter方法
 	public void setDutyDay(String dutyDay) {
 		this.dutyDay = dutyDay;
 	}
 
-	public String getDutyDay() {
-		return this.dutyDay;
+	public Date getPunchTime() {
+		return punchTime;
 	}
 
-	// punchTime属性的setter和getter方法
 	public void setPunchTime(Date punchTime) {
 		this.punchTime = punchTime;
 	}
 
-	public Date getPunchTime() {
-		return this.punchTime;
+	public boolean isCome() {
+		return isCome;
 	}
 
-	// isCome属性的setter和getter方法
-	public void setIsCome(boolean isCome) {
+	public void setCome(boolean isCome) {
 		this.isCome = isCome;
 	}
 
-	public boolean getIsCome() {
-		return this.isCome;
+	public AttendType getType() {
+		return type;
 	}
 
-	// type属性的setter和getter方法
 	public void setType(AttendType type) {
 		this.type = type;
 	}
 
-	public AttendType getType() {
-		return this.type;
+	public Employee getEmployee() {
+		return employee;
 	}
 
-	// employee属性的setter和getter方法
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
-	}
-
-	public Employee getEmployee() {
-		return this.employee;
-	}
-
-	// 根据employee、isCome、dutyDay来重写equals方法
-	public boolean equals(Object obj) {
-		if (this == obj) {
-			return true;
-		}
-		if (obj != null && obj.getClass() == Attend.class) {
-			Attend attend = (Attend) obj;
-			return getEmployee().equals(attend.getEmployee())
-					&& getDutyDay().equals(attend.getDutyDay())
-					&& getIsCome() == attend.getIsCome();
-		}
-		return false;
-	}
-
-	// 根据employee、isCome、dutyDay来重写hashCode()方法
-	public int hashCode() {
-		if (getIsCome()) {
-			return dutyDay.hashCode() + 29 * employee.hashCode() + 1;
-		}
-		return dutyDay.hashCode() + 29 * employee.hashCode();
 	}
 }

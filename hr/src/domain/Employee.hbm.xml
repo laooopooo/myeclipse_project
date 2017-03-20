@@ -1,55 +1,56 @@
-<?xml version="1.0" encoding="GBK"?>
-<!-- 指定Hibernate映射文件的DTD信息 -->
-<!DOCTYPE hibernate-mapping PUBLIC 
-	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Hibernate映射文件的根元素 -->
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 <hibernate-mapping package="domain">
-	<class name="Employee" table="emp_table"
-		discriminator-value="1">
-		<!-- 使用只读缓存 -->
-		<cache usage="read-only"/>
-		<!-- 映射标识属性 -->
-		<id	name="id" type="integer" column="emp_id">
-			<!-- 指定使用identity主键生成策略 -->
-			<generator class="identity"/>
+	<class name="Employee" table="emp_table" discriminator-value="1">
+
+		<cache usage="read-only" />
+
+		<id name="id" type="integer" column="">
+			<generator class="identity"></generator>
 		</id>
-		<discriminator column="emp_type" type="int"/>
-		<!-- 映射普通属性 -->
-		<property name="name" column="emp_name"	type="string"
-			not-null="true" length="50" unique="true"/>
-		<property name="pass" column="emp_pass"	type="string"
-			not-null="true" length="50"/>
-		<property name="salary" column="emp_salary" type="double"
-			not-null="true" />
-		<!-- 映射和Manager的关联关系 -->
-		<many-to-one name="manager" column="mgr_id"
-			class="Manager" lazy="false"/>
-		<!-- 映射和Attend之间的关联关系 -->
+
+		<discriminator type="int" column="emp_type"></discriminator>
+
+		<property name="name" type="string" column="emp_name"
+			not-null="true" length="50"></property>
+
+		<property name="pass" type="string" column="emp_pass" length="50"
+			not-null="true"></property>
+
+		<property name="salary" type="double" column="emp_salary"
+			not-null="true"></property>
+
+		<many-to-one name="manager" class="Manager" column="mgr_id"
+			not-null="true" lazy="false"></many-to-one>
+
 		<set name="attends" inverse="true">
-			<key column="emp_id" />
-			<one-to-many class="Attend"/>
+			<key column="emp_id"></key>
+			<one-to-many class="Attend" />
 		</set>
-		<!-- 映射和Payment之间的关联关系 -->
+
 		<set name="payments" inverse="true">
-			<key column="emp_id" />
-			<one-to-many class="Payment"/>
+			<key column="emp_id"></key>
+			<one-to-many class="Payment" />
 		</set>
-		<!-- 映射Employee的子类Manager -->
+
+
+
 		<subclass name="Manager" discriminator-value="2">
-			<!-- 映射Manager的普通属性 -->
-			<property name="dept" column="dept_name"
-				type="string" length="50"/>
-			<!-- 映射和Employee之间的关联关系 -->
+			<property name="dept" type="string" column="dept_name"
+				length="50"></property>
+
 			<set name="employees" inverse="true">
-				<key column="mgr_id" />
-				<one-to-many class="Employee"/>
+				<key column="mgr_id"></key>
+				<one-to-many class="Employee" />
 			</set>
-			<!-- 映射和CheckBack之间的关联关系 -->
+
 			<set name="checks" inverse="true">
-				<key column="mgr_id" />
-				<one-to-many class="CheckBack"/>
+				<key column="mgr_id"></key>
+				<one-to-many class="CheckBack" />
 			</set>
 		</subclass>
+
+
+
 	</class>
 </hibernate-mapping>
