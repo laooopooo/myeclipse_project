@@ -2,6 +2,9 @@ package typeinfo.toys;
 
 import static net.mindview.util.Print.print;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
 interface HasBatteries {
 
 }
@@ -41,6 +44,7 @@ public class ToyTest {
 				+ cc.isInterface() + "]");
 		print("Simple name: " + cc.getSimpleName());
 		print("Canonical name: " + cc.getCanonicalName());
+		System.out.println("============================");
 	}
 
 	public static void main(String[] args) {
@@ -51,15 +55,20 @@ public class ToyTest {
 			print("Can't find FancyToy");
 			System.exit(1);
 		}
-
 		printInfo(c);
+		System.out.println("我是FancyToy类与其接口的分隔符");
 		for (Class face : c.getInterfaces()) {
 			printInfo(face);
 		}
+		System.out.println("我是接口与父类的分隔符");
 		Class up = c.getSuperclass();
 		Object obj = null;
 		try {
-			obj = up.newInstance();
+			// 通过反射创建有参构造函数的实例
+			Constructor ctor = up.getConstructor(int.class);
+			obj = ctor.newInstance(5);
+			// 只能利用无参构造方法获取实例
+			// obj = up.newInstance();
 		} catch (InstantiationException e) {
 			print("Can't instantiate");
 			System.exit(1);
@@ -67,6 +76,18 @@ public class ToyTest {
 			// TODO: handle exception
 			print("Can't access");
 			System.exit(1);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		printInfo(obj.getClass());
 	}

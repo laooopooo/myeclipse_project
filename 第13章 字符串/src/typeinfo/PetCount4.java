@@ -16,5 +16,4 @@ public class PetCount4 {
 		print();
 		print(counter);
 	}
-
 }

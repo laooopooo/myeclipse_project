@@ -10,6 +10,7 @@ public class TypeCounter extends HashMap<Class<?>, Integer> {
 		this.baseType = baseType;
 	}
 
+	// 只要obj是baseType的子类，则obj直至baseType继承体系的所有类的个数都加1
 	public void count(Object obj) {
 		Class<?> type = obj.getClass();
 		if (!baseType.isAssignableFrom(type)) {

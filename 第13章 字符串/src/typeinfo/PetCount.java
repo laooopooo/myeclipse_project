@@ -10,6 +10,7 @@ import typeinfo.pets.Cymric;
 import typeinfo.pets.Dog;
 import typeinfo.pets.EgyptianMau;
 import typeinfo.pets.ForNameCreator;
+import typeinfo.pets.Gerbil;
 import typeinfo.pets.Hamster;
 import typeinfo.pets.Manx;
 import typeinfo.pets.Mouse;
@@ -83,6 +84,9 @@ public class PetCount {
 			}
 			if (pet instanceof Hamster) {
 				counter.count("Hamster");
+			}
+			if (pet instanceof Gerbil) {
+				counter.count("Gerbil");
 			}
 			// 以上判断可以放在PetCounter.count()中
 			// counter.count(pet);

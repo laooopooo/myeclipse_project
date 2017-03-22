@@ -1,6 +1,9 @@
 package domain;
 
 public class Course {
+	static {
+		System.out.println("load Course");
+	}
 	private Integer id;
 	private String name;
 
