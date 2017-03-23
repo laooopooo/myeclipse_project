@@ -27,6 +27,7 @@ class RealObject implements Interface {
 class SimpleProxy implements Interface {
 	private Interface proxied;
 	private int invokeDoSomethingTimes = 0;
+	private int invokeSomethingElse = 0;
 
 	public SimpleProxy() {
 		// TODO Auto-generated constructor stub
@@ -47,6 +48,8 @@ class SimpleProxy implements Interface {
 		// TODO Auto-generated method stub
 		print("SimpleProxy somethingElse " + arg);
 		proxied.somethingElse(arg);
+		invokeDoSomethingTimes++;
+		print("somethingElse have been invoke " + invokeSomethingElse);
 	}
 }
 
