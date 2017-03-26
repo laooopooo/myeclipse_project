@@ -3,6 +3,12 @@ package net.mindview.util;
 import java.util.Arrays;
 import java.util.Collection;
 
+/**
+ * 格式化输出集合
+ * 
+ * @author pfjia
+ *
+ */
 public class PPrint {
 	public static String pformat(Collection<?> c) {
 		if (c.size() == 0) {

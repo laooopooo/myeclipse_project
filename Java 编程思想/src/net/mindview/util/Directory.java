@@ -49,11 +49,52 @@ public final class Directory {
 		}
 	}
 
+	/**
+	 * 
+	 * @param start
+	 *            starttFile
+	 * @param regex
+	 *            正则表达式
+	 * @return 从start文件开始及其子目录下所有匹配regex的文件
+	 */
+	public static TreeInfo walk(String start, String regex) {
+		return recurseDirs(new File(start), regex);
+	}
+
 	public static TreeInfo walk(File start, String regex) {
 		return recurseDirs(start, regex);
 	}
 
+	public static TreeInfo walk(File start) {
+		return recurseDirs(start, ".*");
+	}
+
+	public static TreeInfo walk(String start) {
+		return recurseDirs(new File(start), ".*");
+	}
+
 	static TreeInfo recurseDirs(File startDir, String regex) {
 		TreeInfo result = new TreeInfo();
+		for (File item : startDir.listFiles()) {
+			if (item.isDirectory()) {
+				result.dirs.add(item);
+				result.addAll(recurseDirs(item, regex));
+			} else {
+				if (item.getName().matches(regex)) {
+					result.files.add(item);
+				}
+			}
+		}
+		return result;
+	}
+
+	public static void main(String[] args) {
+		if (args.length == 0) {
+			System.out.println(walk("."));
+		} else {
+			for (String arg : args) {
+				System.out.println(walk(arg));
+			}
+		}
 	}
 }

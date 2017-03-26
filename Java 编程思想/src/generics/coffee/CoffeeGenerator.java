@@ -15,6 +15,7 @@ public class CoffeeGenerator implements Generator<Coffee>, Iterable<Coffee> {
 		// TODO Auto-generated constructor stub
 	}
 
+	// size是“末端哨兵”，决定返回的Iterator的循环次数
 	public CoffeeGenerator(int size) {
 		this.size = size;
 	}
