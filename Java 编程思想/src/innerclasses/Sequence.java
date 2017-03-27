@@ -2,14 +2,6 @@ package innerclasses;
 
 import exercise10.StringWarpper;
 
-interface Selector {
-	boolean end();
-
-	Object current();
-
-	void next();
-}
-
 public class Sequence {
 	private Object[] items;
 	private int next = 0;
@@ -58,6 +50,7 @@ public class Sequence {
 	}
 
 	public static void main(String[] args) {
+		// Sequence是定长的数组
 		Sequence sequence = new Sequence(10);
 		for (int i = 0; i < 10; i++) {
 			sequence.add(new StringWarpper());

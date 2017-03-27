@@ -1,7 +1,8 @@
 package exercise14;
 
 import static net.mindview.util.Print.print;
-import typeinfo.pets.Pug;
+
+import java.util.HashSet;
 
 /**
  * 使用反射获取某个类的继承体系
@@ -23,6 +24,6 @@ public class E08_RecursiveClassPrint {
 	}
 
 	public static void main(String[] args) {
-		printClasses(Pug.class);
+		printClasses(HashSet.class);
 	}
 }
