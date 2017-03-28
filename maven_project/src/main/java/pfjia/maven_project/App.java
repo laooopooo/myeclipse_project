@@ -1,4 +1,4 @@
-package com.test.first_maven;
+package pfjia.maven_project;
 
 /**
  * Hello world!
