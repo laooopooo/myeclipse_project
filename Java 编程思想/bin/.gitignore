@@ -1,7 +1,3 @@
-/innerclasses/
-/holding/
-/exercise14/
-/net/
 /generics/
 /annotations/
 /concurrency/
@@ -10,3 +6,7 @@
 /exercise10/
 /exercise12/
 /strings/
+/exercise14/
+/holding/
+/innerclasses/
+/net/
