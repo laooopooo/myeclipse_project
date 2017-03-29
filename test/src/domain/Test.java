@@ -7,8 +7,14 @@ public class Test {
 		// System.out.println(l);
 		// List<Character> l2 = new ArrayList<Character>(l);
 		// System.out.println(l2);
-		Integer x = null;
-		System.out.println(Float.class);
-		Class
+
+		Object[] os = new Object[1];
+		os[0] = "2";
+
+		String[] ss = new String[1];
+		ss[0] = (String) os[0];
+
+		ss = (String[]) os;
+
 	}
 }

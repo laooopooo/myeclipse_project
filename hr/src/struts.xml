@@ -2,4 +2,16 @@
 <!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
 <struts>
 
+
+
+
+	<!-- 配置包 -->
+	<package name="default" extends="struts-default">
+
+
+		<!-- 配置默认Action，所有WEB-INF下的jsp都对应一个action -->
+		<action name="*">
+			<result>/WEB-INF/content/{1}.jsp</result>
+		</action>
+	</package>
 </struts>    
