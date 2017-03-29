@@ -8,6 +8,6 @@
 <s:head />
 </head>
 <body>
-	<
+	<table width="780" align="center" background="${pageContext.request.cont }"></table>
 </body>
 </html>
