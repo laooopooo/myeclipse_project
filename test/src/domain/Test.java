@@ -10,12 +10,18 @@ public class Test {
 
 		Object[] os = new Object[1];
 		os[0] = "1";
-		Object[] os = new Object[1];
-		os[0] = "2";
+
 		String[] ss = new String[1];
 		ss[0] = (String) os[0];
 
-	ss = (String[]) os;
+		ss = (String[]) os;
+
+		int i = Integer.MAX_VALUE;
+
+		byte c = 9;
+
+		c = (byte) i;
+		System.out.println(c);
 
 	}
 }
