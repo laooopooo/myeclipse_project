@@ -1,5 +1,7 @@
 package action;
 
+import org.apache.struts2.ServletActionContext;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 import domain.User;
@@ -27,6 +29,8 @@ public class LoginAction extends ActionSupport {
 
 	@Override
 	public String execute() throws Exception {
+		ServletActionContext.getPageContext()
+		ServletActionContext.getRequest()
 		// TODO Auto-generated method stub
 		System.out.println("ÎÒÊÇloginactionµÄexecute£¨£©");
 		System.out.println(user.getName());
