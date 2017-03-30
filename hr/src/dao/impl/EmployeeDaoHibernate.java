@@ -54,4 +54,17 @@ public class EmployeeDaoHibernate extends YeekuHibernateDaoSupport implements
 		return getHibernateTemplate().find("from Employee");
 	}
 
+	@Override
+	public boolean hasEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		List result = getHibernateTemplate().find(
+				"from Employee p where p.jobNum= ? and p.pass= ?",
+				emp.getJobNum(), emp.getPass());
+		if (result.size() > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }

@@ -12,5 +12,4 @@ public interface EmpManager {
 	public static final int LOGIN_MGR = 2;
 
 	int validLogin(Manager manager);
-
 }

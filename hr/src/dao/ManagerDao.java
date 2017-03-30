@@ -22,4 +22,8 @@ public interface ManagerDao {
 
 	List<Manager> findAll();
 
+	boolean hasManager(Manager manager);
+
+	boolean findByNameAndPass(Manager manager);
+
 }

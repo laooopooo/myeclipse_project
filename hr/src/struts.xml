@@ -20,10 +20,10 @@
 			<result name="error">/WEB-INF/content/login.jsp</result>
 		</action>
 
-
 		<!-- 配置默认Action，所有WEB-INF下的jsp都对应一个action -->
-		<action name="*">
+		<action name="*.action">
 			<result>/WEB-INF/content/{1}.jsp</result>
 		</action>
+
 	</package>
 </struts>    

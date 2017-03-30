@@ -11,6 +11,9 @@
 
 		<discriminator type="int" column="emp_type"></discriminator>
 
+		<property name="jobNum" type="string" column="emp_num"
+			not-null="true" unique="true" length="50"></property>
+
 		<property name="name" type="string" column="emp_name"
 			not-null="true" length="50"></property>
 

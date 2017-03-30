@@ -19,6 +19,10 @@ public class Employee implements Serializable {
 	private Integer id;
 	// 员工姓名（可以重复）
 	private String name;
+	// 工号
+	// 姓名可以重复，在登录需使用工号和密码登录
+	private String jobNum;
+
 	// 员工密码
 	private String pass;
 	// 员工每月的薪水
@@ -90,9 +94,12 @@ public class Employee implements Serializable {
 		this.payments = payments;
 	}
 
-	public Employee(Integer id, String name, String pass, double salary,
-			Manager manager, Set<Attend> attends, Set<Payment> payments) {
+	public Employee(Integer id, String jobNum, String name, String pass,
+			double salary, Manager manager, Set<Attend> attends,
+			Set<Payment> payments) {
+
 		this.id = id;
+		this.setJobNum(jobNum);
 		this.name = name;
 		this.pass = pass;
 		this.salary = salary;
@@ -137,6 +144,14 @@ public class Employee implements Serializable {
 		} else if (!pass.equals(other.pass))
 			return false;
 		return true;
+	}
+
+	public String getJobNum() {
+		return jobNum;
+	}
+
+	public void setJobNum(String jobNum) {
+		this.jobNum = jobNum;
 	}
 
 }

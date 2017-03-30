@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project>
+  <add-on id="spring.remoting_2.5"/>
+  <add-on id="spring.test"/>
+  <add-on id="spring.misc"/>
+  <add-on id="spring.aop"/>
+  <add-on id="spring.persistence.jdo"/>
+  <add-on id="spring.j2ee_2.5"/>
   <add-on id="spring.web"/>
+  <add-on id="spring.persistence.ibatis_3.0"/>
+  <add-on id="hibernate.extra"/>
+  <add-on id="spring.persistence.jdbc"/>
+  <add-on id="spring.persistence"/>
   <container path="com.genuitec.runtime.library/com.genuitec.hibernate_4.1">
     <jar-attrs id="data/4.1/lib/core/hibernate-core-4.1.4.Final.jar">
       <attribute name="javadoc_location" value="http://docs.jboss.org/hibernate/orm/4.1/javadocs/"/>
