@@ -25,7 +25,7 @@ public class Ex8 {
 	public static void main(String[] args) {
 		try {
 			Test8 t = new Test8();
-			t.f();
+			Test8.f();
 		} catch (Exception84 e) {
 			System.err.println("Caught Exception4");
 			e.printStackTrace();
