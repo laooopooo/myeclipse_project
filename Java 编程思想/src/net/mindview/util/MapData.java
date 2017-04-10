@@ -48,25 +48,31 @@ public class MapData<K, V> extends LinkedHashMap<K, V> {
 	}
 
 	// Generic convenience methods
+
+	// 一个Pair的Generator和元素个数
 	public static <K, V> MapData<K, V> map(Generator<Pair<K, V>> gen,
 			int quantity) {
 		return new MapData<K, V>(gen, quantity);
 	}
 
+	// 一个key的Generator 和一个value的Generator 和元素个数
 	public static <K, V> MapData<K, V> map(Generator<K> genK,
 			Generator<V> genV, int quantity) {
 		return new MapData<K, V>(genK, genV, quantity);
 	}
 
+	// 一个key的Generator 和一个value 和元素个数
 	public static <K, V> MapData<K, V> map(Generator<K> genK, V value,
 			int quantity) {
 		return new MapData<K, V>(genK, value, quantity);
 	}
 
+	// 一个key的Iterable 和一个value的Generator
 	public static <K, V> MapData<K, V> map(Iterable<K> genK, Generator<V> genV) {
 		return new MapData<K, V>(genK, genV);
 	}
 
+	// 一个key的Iterable 和一个value
 	public static <K, V> MapData<K, V> map(Iterable<K> genK, V value) {
 		return new MapData<K, V>(genK, value);
 	}

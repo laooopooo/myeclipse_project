@@ -14,6 +14,7 @@ import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Set;
 import java.util.SortedMap;
+import java.util.SortedSet;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
@@ -63,6 +64,8 @@ public class ContainerMethodDifferences {
 		difference(LinkedHashSet.class, HashSet.class);
 		// TreeSet增加了比较的方法
 		difference(TreeSet.class, Set.class);
+
+		difference(SortedSet.class, Set.class);
 		// List
 		difference(List.class, Collection.class);
 
@@ -82,6 +85,8 @@ public class ContainerMethodDifferences {
 		difference(SortedMap.class, Map.class);
 
 		difference(TreeMap.class, Map.class);
+
+		difference(Queue.class, Collection.class);
 	}
 
 }

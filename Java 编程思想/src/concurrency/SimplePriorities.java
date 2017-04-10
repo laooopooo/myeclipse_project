@@ -24,7 +24,7 @@ public class SimplePriorities implements Runnable {
 		Thread.currentThread().setPriority(priority);
 		while (true) {
 			for (int i = 1; i < 100000; i++) {
-				d += (Math.PI + Math.E) / (double) i;
+				d += (Math.PI + Math.E) / i;
 				if (i % 1000 == 0) {
 					Thread.yield();
 				}
