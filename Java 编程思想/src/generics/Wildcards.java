@@ -83,8 +83,8 @@ public class Wildcards {
 		Long r5 = exact2(raw, lng);
 
 		Long r6 = exact2(qualified, lng);
-		Long r7 = exact2(unbounded, lng);
-		Long r8 = exact2(bounded, lng);
+		// Long r7 = exact2(unbounded, lng);
+		// Long r8 = exact2(bounded, lng);
 
 		Long r9 = wildSubtype(raw, lng);
 

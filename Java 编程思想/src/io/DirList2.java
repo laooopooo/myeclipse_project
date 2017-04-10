@@ -28,7 +28,7 @@ public class DirList2 {
 	 * @return
 	 */
 
-	public static FilenameFilter filter(String regex) {
+	public static FilenameFilter filter(final String regex) {
 
 		String s = "1";
 
@@ -59,5 +59,4 @@ public class DirList2 {
 			System.out.println(dirItem);
 		}
 	}
-
 }
