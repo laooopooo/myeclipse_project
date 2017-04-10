@@ -8,6 +8,14 @@ import java.util.List;
 import java.util.regex.Pattern;
 
 public final class Directory {
+	/**
+	 * 
+	 * @param dir
+	 *            根目录
+	 * @param regex
+	 *            匹配文件的正则表达式
+	 * @return 返回该根目录下所有屁屁额regex的file
+	 */
 	public static File[] local(File dir, final String regex) {
 		return dir.listFiles(new FilenameFilter() {
 			private Pattern pattern = Pattern.compile(regex);
@@ -73,6 +81,15 @@ public final class Directory {
 		return recurseDirs(new File(start), ".*");
 	}
 
+	/**
+	 * 遍历
+	 * 
+	 * @param startDir
+	 *            根目录
+	 * @param regex
+	 *            匹配用正则表达式
+	 * @return 遍历根目录下所有文件及文件夹
+	 */
 	static TreeInfo recurseDirs(File startDir, String regex) {
 		TreeInfo result = new TreeInfo();
 		for (File item : startDir.listFiles()) {

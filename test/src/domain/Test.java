@@ -31,15 +31,10 @@ public class Test {
 		// c = (byte) i;
 		// System.out.println(c);
 
-		Object o = new Object() {
-			@Override
-			public boolean equals(Object obj) {
-				// TODO Auto-generated method stub
-				return true;
-			}
-		};
-
-		System.out.println(o.equals("Fred"));
+		String s = "123";
+		String s3 = "123";
+		String s2 = new String("123");
+		System.out.println(s == s3);
 
 	}
 }
