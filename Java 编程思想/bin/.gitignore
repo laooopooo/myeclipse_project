@@ -1,12 +1,14 @@
-/generics/
 /annotations/
 /concurrency/
 /exceptions/
-/typeinfo/
 /exercise10/
 /exercise12/
-/strings/
+/exercise13/
 /exercise14/
+/generics/
 /holding/
 /innerclasses/
 /net/
+/strings/
+/typeinfo/
+/io/

@@ -1,5 +1,13 @@
 package domain;
 
+class Holder<T> {
+
+}
+
+class H extends Holder {
+
+}
+
 public class Test {
 	public static void main(String[] args) throws ClassNotFoundException {
 		// List<Character> l = new ArrayList<Character>(Arrays.asList('1', '2',
@@ -8,20 +16,30 @@ public class Test {
 		// List<Character> l2 = new ArrayList<Character>(l);
 		// System.out.println(l2);
 
-		Object[] os = new Object[1];
-		os[0] = "1";
+		// Object[] os = new Object[1];
+		// os[0] = "1";
+		//
+		// String[] ss = new String[1];
+		// ss[0] = (String) os[0];
+		//
+		// ss = (String[]) os;
+		//
+		// int i = Integer.MAX_VALUE;
+		//
+		// byte c = 9;
+		//
+		// c = (byte) i;
+		// System.out.println(c);
 
-		String[] ss = new String[1];
-		ss[0] = (String) os[0];
+		Object o = new Object() {
+			@Override
+			public boolean equals(Object obj) {
+				// TODO Auto-generated method stub
+				return true;
+			}
+		};
 
-		ss = (String[]) os;
-
-		int i = Integer.MAX_VALUE;
-
-		byte c = 9;
-
-		c = (byte) i;
-		System.out.println(c);
+		System.out.println(o.equals("Fred"));
 
 	}
 }

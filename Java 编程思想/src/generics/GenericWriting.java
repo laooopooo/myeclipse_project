@@ -1,22 +1,22 @@
+//: generics/GenericWriting.java
+
 package generics;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class GenericWriting {
-
 	static <T> void writeExact(List<T> list, T item) {
 		list.add(item);
 	}
 
 	static List<Apple> apples = new ArrayList<Apple>();
-
 	static List<Fruit> fruit = new ArrayList<Fruit>();
 
 	static void f1() {
 		writeExact(apples, new Apple());
-
-		writeExact(fruit, new Apple());
+		writeExact(fruit, new Apple()); // Error:
+		// Incompatible types: found Fruit, required Apple
 	}
 
 	static <T> void writeWithWildcard(List<? super T> list, T item) {
@@ -25,7 +25,6 @@ public class GenericWriting {
 
 	static void f2() {
 		writeWithWildcard(apples, new Apple());
-
 		writeWithWildcard(fruit, new Apple());
 	}
 
@@ -33,5 +32,4 @@ public class GenericWriting {
 		f1();
 		f2();
 	}
-
-}
+} // /:~
