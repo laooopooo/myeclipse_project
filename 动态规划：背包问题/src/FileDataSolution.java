@@ -1,4 +1,31 @@
-public class Solution {
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.util.Scanner;
+
+public class FileDataSolution {
+	private static String inputFileName = "C:\\Users\\Administrator\\Desktop\\1.txt";
+	private static String outputFileName = "C:\\Users\\Administrator\\Desktop\\2.txt";
+	private static Scanner sc;
+	private static BufferedWriter bw;
+	static {
+		try {
+			sc = new Scanner(new File(inputFileName));
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		try {
+			bw = new BufferedWriter(new OutputStreamWriter(
+					new FileOutputStream(outputFileName, false)));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 
 	/**
 	 * @param m
@@ -49,6 +76,7 @@ public class Solution {
 			}
 			// 背包剩余空间装不下最后一个物品
 			else {
+
 				result = 0;
 			}
 		}
@@ -70,10 +98,26 @@ public class Solution {
 		return a > b ? a : b;
 	}
 
-	public static void main(String[] args) {
-		Solution s = new Solution();
-		int[] A = { 2, 3, 5, 7 };
-		int i = s.backPack(8888, A);
-		System.out.println(i);
+	public static void main(String[] args) throws IOException {
+		FileDataSolution fds = new FileDataSolution();
+		int testCase = sc.nextInt();
+		for (int i = 0; i < testCase - 1; i++) {
+			// 初始化数据
+			int backPackCapacity = sc.nextInt();
+			int goodNum = sc.nextInt();
+			int[] goodWeightNums = new int[goodNum];
+			for (int j = 0; j < goodNum; j++) {
+				goodWeightNums[j] = sc.nextInt();
+			}
+			bw.write(fds.backPack(backPackCapacity, goodWeightNums) + "\n");
+		}
+		int backPackCapacity = sc.nextInt();
+		int goodNum = sc.nextInt();
+		int[] goodWeightNums = new int[goodNum];
+		for (int j = 0; j < goodNum; j++) {
+			goodWeightNums[j] = sc.nextInt();
+		}
+		bw.write(fds.backPack(backPackCapacity, goodWeightNums) + "");
+		bw.close();
 	}
 }
