@@ -1,8 +1,11 @@
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Random;
 
 //归并数据生成器
 public class DataGenerator {
+	private static char[] chars = ("abcdefghijklmnopqrstuvwxyz"
+			+ "ABCDEFGHIJKLMNOPQRSTUVWXYZ").toCharArray();
 
 	// 将前后相邻的两个有序表合并成一个有序表
 	private void merge(int nums[], int low, int mid, int high) {
@@ -66,25 +69,6 @@ public class DataGenerator {
 	}
 
 	/**
-	 * 随机生成有序元素
-	 * 
-	 * @param length
-	 *            有序元素个数
-	 * @param maxNum
-	 *            元素最大值
-	 * @param minNum
-	 *            元素最小值
-	 * @return 有序元素数组
-	 */
-	private int[] generateOrderedDatas(int length, int maxNum, int minNum) {
-		// 先生成无序元素
-		int[] result = generateUnorderedDatas(length, maxNum, minNum);
-		// 排序
-		mergeSort(result, 0, result.length - 1);
-		return result;
-	}
-
-	/**
 	 * 向文件中追加无序元素，没有/n
 	 * 
 	 * @param fileName
@@ -93,7 +77,7 @@ public class DataGenerator {
 	 * @param minNum
 	 * @throws IOException
 	 */
-	public String getUnorderedDatas(int length, int maxNum, int minNum) {
+	public String getUnorderedIntegers(int length, int maxNum, int minNum) {
 		int[] result = generateUnorderedDatas(length, maxNum, minNum);
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < result.length - 1; i++) {
@@ -112,7 +96,7 @@ public class DataGenerator {
 	 * @param minNum
 	 * @throws IOException
 	 */
-	public String getOrderedDatas(int length, int maxNum, int minNum) {
+	public String getOrderedIntegers(int length, int maxNum, int minNum) {
 		int[] result = generateUnorderedDatas(length, maxNum, minNum);
 		mergeSort(result, 0, length - 1);
 		StringBuilder sb = new StringBuilder();
@@ -121,5 +105,36 @@ public class DataGenerator {
 		}
 		sb.append(result[length - 1]);
 		return sb.toString();
+	}
+
+	/**
+	 * 
+	 * @param length
+	 *            生成String的长度
+	 * @return 无序字符串
+	 */
+	public String getUnorderedString(int length) {
+		Random rand = new Random();
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < length; i++) {
+			sb.append(chars[rand.nextInt(chars.length)]);
+		}
+		return sb.toString();
+	}
+
+	/**
+	 * 
+	 * @param length
+	 *            生成String的长度
+	 * @return 有序字符串
+	 */
+	public String getOrderedString(int length) {
+		Random rand = new Random();
+		char[] temp = new char[length];
+		for (int i = 0; i < length; i++) {
+			temp[i] = (chars[rand.nextInt(chars.length)]);
+		}
+		Arrays.sort(temp);
+		return String.valueOf(temp);
 	}
 }

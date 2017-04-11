@@ -7,78 +7,52 @@ public class Main {
 		sc = new Scanner(System.in);
 	}
 
-	public int longestIncreasingSubsequence(int[] nums) {
-		// write your code here
-		if (nums == null || nums.length == 0) {
+	public int longestCommonSubsequence(String A, String B) {
+		if (A == null || B == null || A.length() == 0 || B.length() == 0) {
 			return 0;
 		}
-		int[] memo = new int[nums.length];
+		int aLen = A.length();
+		int bLen = B.length();
+		int[][] memo = new int[aLen + 1][bLen + 1];
 		for (int i = 0; i < memo.length; i++) {
-			memo[i] = Integer.MIN_VALUE;
+			memo[i][0] = 0;
 		}
-		memoSubLIS(nums, nums.length - 1, memo);
-		return maxArrays(memo, memo.length - 1);
-	}
-
-	public int memoSubLIS(int[] nums, int index, int[] memo) {
-		int result = 0;
-
-		if (memo[index] != Integer.MIN_VALUE) {
-			return memo[index];
+		for (int i = 0; i < memo[0].length; i++) {
+			memo[0][i] = 0;
 		}
-
-		if (index == 0) {
-			memo[index] = 1;
-			return 1;
-		} else {
-			for (int i = 0; i < index; i++) {
-
-				int tempLis = 0;
-				int memoI = memoSubLIS(nums, i, memo);
-				if (nums[index] > nums[i]) {
-					tempLis = memoI + 1;
+		for (int i = 1; i < memo.length; i++) {
+			for (int j = 1; j < memo[0].length; j++) {
+				if (A.charAt(i - 1) == B.charAt(j - 1)) {
+					memo[i][j] = memo[i - 1][j - 1] + 1;
 				} else {
-					tempLis = 1;
+					memo[i][j] = memo[i][j - 1] > memo[i - 1][j] ? memo[i][j - 1]
+							: memo[i - 1][j];
 				}
-				result = max(result, tempLis);
 			}
 		}
-
-		memo[index] = result;
-		return result;
-	}
-
-	public int maxArrays(int[] nums, int index) {
-		if (index >= nums.length) {
-			return -1;
+		int maxLength = 0;
+		for (int i = 1; i < memo.length; i++) {
+			for (int j = 1; j < memo[0].length; j++) {
+				maxLength = maxLength > memo[i][j] ? maxLength : memo[i][j];
+			}
 		}
-		int max = Integer.MIN_VALUE;
-		for (int i = 0; i <= index; i++) {
-			max = max > nums[i] ? max : nums[i];
-		}
-		return max;
-	}
-
-	public int max(int a, int b) {
-		return a > b ? a : b;
+		return maxLength;
 	}
 
 	public static void main(String[] args) throws IOException {
 		Main fds = new Main();
 		int testCase = sc.nextInt();
+		String s1;
+		String s2;
 		for (int i = 0; i < testCase - 1; i++) {
-			int num = sc.nextInt();
-			int[] nums = new int[num];
-			for (int j = 0; j < num; j++) {
-				nums[j] = sc.nextInt();
-			}
-			System.out.print(fds.longestIncreasingSubsequence(nums) + "\n");
+			s1 = sc.next();
+			s2 = sc.next();
+			System.out.print(fds.longestCommonSubsequence(s1, s2) + "\n");
 		}
-		int num = sc.nextInt();
-		int[] nums = new int[num];
-		for (int j = 0; j < num; j++) {
-			nums[j] = sc.nextInt();
-		}
-		System.out.print(fds.longestIncreasingSubsequence(nums) + "");
+		s1 = sc.next();
+		s2 = sc.next();
+
+		System.out.print(fds.longestCommonSubsequence(s1, s2) + "");
+
 	}
 }
