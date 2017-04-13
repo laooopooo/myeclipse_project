@@ -2,8 +2,6 @@ package containers;
 
 import static net.mindview.util.Print.print;
 
-import java.util.HashMap;
-
 public class AssociativeArray<K, V> {
 	private Object[][] pairs;
 	private int index;
@@ -46,10 +44,9 @@ public class AssociativeArray<K, V> {
 	}
 
 	public static void main(String[] args) {
-		// AssociativeArray<String, String> map = new AssociativeArray<String,
-		// String>(
-		// 6);
-		HashMap<String, String> map = new HashMap<String, String>();
+		AssociativeArray<String, String> map = new AssociativeArray<String, String>(
+				6);
+		// HashMap<String, String> map = new HashMap<String, String>();
 		map.put("sky", "blue");
 		map.put("grass", "green");
 		map.put("ocean", "dancing");

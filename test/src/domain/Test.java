@@ -1,5 +1,6 @@
 package domain;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,5 +12,7 @@ public class Test {
 		map.put(2, 3);
 		Map<Integer, Integer> m = new HashMap<Integer, Integer>(map);
 		System.out.println(m);
+
+
 	}
 }

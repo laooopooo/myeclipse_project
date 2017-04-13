@@ -12,6 +12,7 @@ public class DirectoryDemo {
 	public static void main(String[] args) {
 		// All directories
 		PPrint.pprint(Directory.walk(".").dirs);
+		System.out.println("**************************");
 
 		// All files beginning with 'T'
 		for (File file : Directory.local(".", "T.*")) {

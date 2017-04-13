@@ -30,8 +30,6 @@ public class DirList2 {
 
 	public static FilenameFilter filter(final String regex) {
 
-		String s = "1";
-
 		// Creation of anonymous inner class
 		return new FilenameFilter() {
 
