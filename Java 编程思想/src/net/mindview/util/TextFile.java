@@ -53,7 +53,6 @@ public class TextFile extends ArrayList<String> {
 					new File(fileName).getAbsoluteFile());
 			try {
 				out.print(text);
-				;
 			} finally {
 				out.close();
 			}
