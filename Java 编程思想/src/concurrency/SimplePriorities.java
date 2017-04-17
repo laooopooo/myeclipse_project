@@ -5,7 +5,8 @@ import java.util.concurrent.Executors;
 
 public class SimplePriorities implements Runnable {
 	private int countDown = 5;
-	private volatile double d;
+	// Ω˚÷π÷∏¡Ó÷ÿ≈≈–Ú
+	private volatile double d;// No optimization
 	private int priority;
 
 	public SimplePriorities(int priority) {

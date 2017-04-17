@@ -11,8 +11,12 @@ public class SleepingTask extends LiftOff {
 		try {
 			while (countDown-- > 0) {
 				System.out.print(status());
+				// Old-style
+				// Thread.sleep(100);
+				// Java 1.5/1.6 style
 				TimeUnit.MILLISECONDS.sleep(100);
 			}
+			System.out.println();
 		} catch (InterruptedException e) {
 			System.out.println(e);
 		}

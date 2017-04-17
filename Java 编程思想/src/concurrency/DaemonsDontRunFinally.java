@@ -22,8 +22,8 @@ class ADaemon implements Runnable {
 public class DaemonsDontRunFinally {
 	public static void main(String[] args) throws Exception {
 		Thread t = new Thread(new ADaemon());
-		t.setDaemon(true);
+		// t.setDaemon(true);
 		t.start();
-		// TimeUnit.MILLISECONDS.sleep(100);
+		TimeUnit.MILLISECONDS.sleep(100);
 	}
 }

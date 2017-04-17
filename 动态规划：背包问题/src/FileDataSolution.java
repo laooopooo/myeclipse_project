@@ -27,97 +27,63 @@ public class FileDataSolution {
 		}
 	}
 
-	/**
-	 * @param m
-	 *            : An integer m denotes the size of a backpack
-	 * @param A
-	 *            : Given n items with size A[i]
-	 * @return: The maximum size
-	 */
-	public int backPack(int m, int[] A) {
+	public int longestCommonSubsequence(String A, String B) {
 		// write your code here
-		/**
-		 * 初始化备忘数组 备忘数组的维数与子问题的参数有关,几个参数就是几维 当前子问题的参数有两个 1.背包剩余空间
-		 * 2.可选的物品数（使用可选物品的最大index代表）
-		 */
-		int memo[][] = new int[m + 1][A.length + 1];
-		for (int i = 0; i < m + 1; i++) {
-			for (int j = 0; j < A.length + 1; j++) {
-				memo[i][j] = -1;
+		if (A == null || B == null || A.length() == 0 || B.length() == 0) {
+			return 0;
+		}
+		int aLen = A.length();
+		int bLen = B.length();
+		int[][] memo = new int[aLen + 1][bLen + 1];
+		// 对memo进行初始化
+		for (int i = 0; i < memo.length; i++) {
+			memo[i][0] = 0;
+		}
+		for (int i = 0; i < memo[0].length; i++) {
+			memo[0][i] = 0;
+		}
+		for (int i = 1; i < memo.length; i++) {
+			for (int j = 1; j < memo[0].length; j++) {
+				if (A.charAt(i - 1) == B.charAt(j - 1)) {
+					memo[i][j] = memo[i - 1][j - 1] + 1;
+				} else {
+					memo[i][j] = memo[i][j - 1] > memo[i - 1][j] ? memo[i][j - 1]
+							: memo[i - 1][j];
+				}
 			}
 		}
-		return memoSubBackPackAux(m, A, A.length - 1, memo);
-	}
-
-	/**
-	 * 子问题中 “背包大小”、“可选物品数目”改变，所以这两个是参数， 需要根据物品数组判断每个物品的大小
-	 * 
-	 * @param m
-	 *            背包剩余空间
-	 * @param A
-	 *            物品数组
-	 * @param num
-	 *            可选物品个数，从0~num都可选(初始num是数组长度-1)
-	 * @param memo
-	 *            备忘数组
-	 * @return
-	 */
-	public int memoSubBackPackAux(int m, int[] A, int num, int[][] memo) {
-		int result = 0;
-		// 备忘录中已存在相应值
-		if (memo[m][num] != -1) {
-			return memo[m][num];
-		}
-		// 边界条件,可选物品只有一个
-		if (num == 0) {
-			// 背包剩余空间可以装下最后一个物品
-			if (m >= A[num]) {
-				result = A[num];
-			}
-			// 背包剩余空间装不下最后一个物品
-			else {
-
-				result = 0;
+		int maxLength = 0;
+		// 遍历memo，找到最大长度
+		for (int i = 1; i < memo.length; i++) {
+			for (int j = 1; j < memo[0].length; j++) {
+				maxLength = maxLength > memo[i][j] ? maxLength : memo[i][j];
 			}
 		}
-		// 分解为子问题
-		else if (m >= A[num]) {// 背包剩余空间足够装下当前物品
-			// 考虑两种情况，取最大值
-			result = max(memoSubBackPackAux(m, A, num - 1, memo),
-					(A[num] + memoSubBackPackAux(m - A[num], A, num - 1, memo)));
-		} else {// 背包剩余空间足够装下当前物品
-			// 仅考虑不装的情况
-			result = memoSubBackPackAux(m, A, num - 1, memo);
-		}
-		// 更新备忘
-		memo[m][num] = result;
-		return result;
-	}
-
-	public int max(int a, int b) {
-		return a > b ? a : b;
+		return maxLength;
 	}
 
 	public static void main(String[] args) throws IOException {
 		FileDataSolution fds = new FileDataSolution();
 		int testCase = sc.nextInt();
+		String s1;
+		String s2;
+		// s1 =
+		// "rEpvTqgnNdziwuXZoGyMbwuEvEeYNzQJLfHteGhMPgiOSRHkWCtqkPDxUmjTeIVUQQBXSGDWypCwTKeXGZbBEpmHbovMDdxAZHDyfXIsrJSqGEZZlASjjuzRHbVZgFxpDUhgQwqQyQHSvAabDffbJNnYFXygWNAgFWqjbCZrGLdreMvMDKupWGlkYgmPbwuxIXwGHUPUTMklSjrCmdfaRaFMeeNdEfngoVRxEnKIjcckRmPDDspIIInVTRSiSJwQgRukCCRLrGss";
+		// s2 =
+		// "EWVCxRIAcDaYNAUVBkPkErsUxKDHdUppgqjmRAvWMgyELKvJnXECllHUZzspmsSUMNDbDAmQRSsKDJDiukwexzfzHiBTrLaCPAxgTbpEOohJrJsCmKItSMypQkzUShdQtmImkDMZIXVJhWGQMxPbiXyWvkyZBubqLrBMEJXvmpobzUugDdbnGDlqhetxpdNgEbLDqIbywgpjXWrFjfShClmUZnRVSjafFLgaBzWCmbdIWJkNhKsuORFurOCkoUpFdWWSPNqHinXS";
+		// System.out.println(fds.longestCommonSubsequence(s1, s2));
 		for (int i = 0; i < testCase - 1; i++) {
 			// 初始化数据
-			int backPackCapacity = sc.nextInt();
-			int goodNum = sc.nextInt();
-			int[] goodWeightNums = new int[goodNum];
-			for (int j = 0; j < goodNum; j++) {
-				goodWeightNums[j] = sc.nextInt();
-			}
-			bw.write(fds.backPack(backPackCapacity, goodWeightNums) + "\n");
+			s1 = sc.next();
+			s2 = sc.next();
+			bw.write(fds.longestCommonSubsequence(s1, s2) + "\n");
 		}
-		int backPackCapacity = sc.nextInt();
-		int goodNum = sc.nextInt();
-		int[] goodWeightNums = new int[goodNum];
-		for (int j = 0; j < goodNum; j++) {
-			goodWeightNums[j] = sc.nextInt();
-		}
-		bw.write(fds.backPack(backPackCapacity, goodWeightNums) + "");
+		// 初始化数据
+		s1 = sc.next();
+		s2 = sc.next();
+
+		bw.write(fds.longestCommonSubsequence(s1, s2) + "");
 		bw.close();
+
 	}
 }

@@ -1,5 +1,6 @@
 /annotations/
 /concurrency/
+/containers/
 /exceptions/
 /exercise10/
 /exercise12/
@@ -8,10 +9,7 @@
 /generics/
 /holding/
 /innerclasses/
+/io/
 /net/
-<<<<<<< HEAD
 /strings/
 /typeinfo/
-/io/
-/containers/
-

@@ -7,5 +7,4 @@ public class MoreBasicThreads {
 		}
 		System.out.println("Waiting for Liftoff");
 	}
-
 }

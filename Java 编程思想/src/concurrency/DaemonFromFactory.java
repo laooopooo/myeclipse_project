@@ -6,6 +6,12 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Using a Thread Factory to create daemons
+ * 
+ * @author pfjia
+ *
+ */
 public class DaemonFromFactory implements Runnable {
 	@Override
 	public void run() {

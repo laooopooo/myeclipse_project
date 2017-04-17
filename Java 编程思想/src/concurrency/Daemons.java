@@ -4,6 +4,13 @@ import static net.mindview.util.Print.printnb;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * Daemon threads spawn other daemon threads
+ * 
+ * @author pfjia
+ *
+ */
+
 class Daemon implements Runnable {
 	private Thread[] t = new Thread[10];
 
@@ -41,7 +48,7 @@ public class Daemons {
 		d.setDaemon(true);
 		d.start();
 		printnb("d.isDaemon() = " + d.isDaemon() + ". ");
-		TimeUnit.SECONDS.sleep(10);
+		TimeUnit.SECONDS.sleep(100);
 	}
 
 }

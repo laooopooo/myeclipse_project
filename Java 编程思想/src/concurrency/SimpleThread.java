@@ -1,5 +1,11 @@
 package concurrency;
 
+/**
+ * Inheriting directly from the Thread class
+ * 
+ * @author pfjia
+ *
+ */
 public class SimpleThread extends Thread {
 	private int countDown = 5;
 	private static int threadCount = 0;
@@ -22,6 +28,7 @@ public class SimpleThread extends Thread {
 		while (true) {
 			System.out.print(this);
 			if (--countDown == 0) {
+				System.out.println();
 				return;
 			}
 		}

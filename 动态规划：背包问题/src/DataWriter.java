@@ -55,9 +55,9 @@ public class DataWriter {
 	 * @param minNum
 	 * @throws IOException
 	 */
-	public void writeUnorderedDatas(int length, int maxNum, int minNum) {
+	public void writeUnorderedIntegers(int length, int maxNum, int minNum) {
 		try {
-			bw.write(dg.getUnorderedDatas(length, maxNum, minNum));
+			bw.write(dg.getUnorderedIntegers(length, maxNum, minNum));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -72,10 +72,38 @@ public class DataWriter {
 	 * @param minNum
 	 * @throws IOException
 	 */
-	public void writeOrderedDatas(int length, int maxNum, int minNum) {
+	public void writeOrderedIntegers(int length, int maxNum, int minNum) {
 		try {
-			bw.write(dg.getOrderedDatas(length, maxNum, minNum));
+			bw.write(dg.getOrderedIntegers(length, maxNum, minNum));
 		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 向文件中写无序字符串，没有\n
+	 * 
+	 * @param length
+	 */
+	public void writeUnorderedString(int length) {
+		try {
+			bw.write(dg.getUnorderedString(length));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 向文件中写有序字符串，没有\n
+	 * 
+	 * @param length
+	 */
+	public void writeOrderedString(int length) {
+		try {
+			bw.write(dg.getOrderedString(length));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
