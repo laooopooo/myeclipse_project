@@ -1,9 +1,7 @@
 package test;
 
-import java.util.Random;
-
 class MyThread extends Thread {
-	public static int i = 0;
+	public static volatile int i = 0;
 
 	@Override
 	public void run() {
@@ -13,11 +11,12 @@ class MyThread extends Thread {
 }
 
 public class Test {
-	public static void main(String[] args) throws InterruptedException {
-		Random r = new Random();
-		for (int i = 0; i < 100; i++) {
-			System.out.println(r.nextInt());
-		}
 
+	public static void main(String[] args) {
+		for (int i = 0; i < 1000; i++) {
+			new MyThread().start();
+		}
+		System.out.println(MyThread.i);
 	}
+
 }
