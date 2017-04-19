@@ -22,6 +22,8 @@ class Count {
 		return (count = ++temp);
 	}
 
+	// 如果没有synchronized同步，可能在increment执行中间执行该方法，返回count不稳定状态的值
+	// 但是在这段代码中没有问题，因为是等所有increment执行完毕后，才调用value()
 	public synchronized int value() {
 		return count;
 	}
@@ -65,7 +67,6 @@ class Entrance implements Runnable {
 	}
 
 	public int getValue() {
-		Thread.yield();
 		return number;
 	}
 
@@ -83,7 +84,6 @@ class Entrance implements Runnable {
 		int sum = 0;
 		for (Entrance entrance : entrances) {
 			sum += entrance.getValue();
-			Thread.yield();
 		}
 		return sum;
 	}
