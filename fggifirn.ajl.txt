@@ -1,0 +1,41 @@
+﻿1.上午看并发
+2.下午看并发
+3.晚上看并发
+4.然后只看了30页不到，我是下午和晚上都没有上课啊。。。
+5.不过感觉今天的收获还是有的
+6.阻塞和中断
+7.线程合作（本质还是pv操作，不过用了另一种方式实现pv操作）
+8.同步队列，消除了各个类直接的耦合
+
+This reverts commit 6bf2f388d2248ad2e4186f8a8ac4ad2ffa9aaa31.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Date:      Wed Apr 19 22:32:08 2017 +0800
+#
+# On branch master
+# Your branch is ahead of 'origin/master' by 3 commits.
+#   (use "git push" to publish your local commits)
+#
+# Changes to be committed:
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/CloseResource.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/Interrupting.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/Interrupting2.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/InterruptingIdiom.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/MultiLock.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/NIOInterruption.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/NotifyVsNotifyAll.java"
+#	modified:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/OrnamentalGarden.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/Restaurant.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/TestBlockingQueues.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/ToastOMatic.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/waxomatic/WaxOMatic.java"
+#	new file:   "Java \347\274\226\347\250\213\346\200\235\346\203\263/src/concurrency/waxomatic2/WaxOMatic2.java"
+#	modified:   test/src/test/Test.java
+#	modified:   "\346\200\235\347\273\264\345\257\274\345\233\276/java\347\274\226\347\250\213\346\200\235\346\203\263.xmind"
+#
+# Untracked files:
+#	dancvwqb.bss.txt
+#
+
